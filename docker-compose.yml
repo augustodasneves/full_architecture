@@ -1,0 +1,120 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: userdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+  servicebus-emulator:
+    image: mcr.microsoft.com/azure-messaging/servicebus-emulator:latest
+    container_name: servicebus-emulator
+    environment:
+      ACCEPT_EULA: "Y"
+      SQL_SERVER: "sql-edge"
+      MSSQL_SA_PASSWORD: "StrongPassword123!"
+    ports:
+      - "5672:5672"
+    depends_on:
+      - sql-edge
+    networks:
+      - app-network
+
+  sql-edge:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    container_name: sql-edge
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "StrongPassword123!"
+    ports:
+      - "1433:1433"
+    networks:
+      - app-network
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - app-network
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+
+  user-account-api:
+    image: ${DOCKER_REGISTRY-}useraccountapi
+    build:
+      context: .
+      dockerfile: src/UserAccountApi/Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=userdb;Username=admin;Password=password
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+  ai-chat-service:
+    image: ${DOCKER_REGISTRY-}aichatservice
+    build:
+      context: .
+      dockerfile: src/AIChatService/Dockerfile
+    environment:
+      - ConnectionStrings__Redis=redis:6379
+      - ServiceBus__ConnectionString=Endpoint=sb://servicebus-emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
+      - LLM__BaseUrl=http://ollama:11434
+    ports:
+      - "8081:8080"
+    depends_on:
+      - redis
+      - servicebus-emulator
+      - ollama
+    networks:
+      - app-network
+
+  pii-update-worker:
+    image: ${DOCKER_REGISTRY-}piiupdateworker
+    build:
+      context: .
+      dockerfile: src/PiiUpdateWorker/Dockerfile
+    environment:
+      - ServiceBus__ConnectionString=Endpoint=sb://servicebus-emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
+      - UserAccountApi__BaseUrl=http://user-account-api:8080
+    depends_on:
+      - servicebus-emulator
+      - user-account-api
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  ollama_data:
