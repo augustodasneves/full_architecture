@@ -46,8 +46,10 @@ services:
       - ConnectionStrings__DefaultConnection=Host=postgres;Database=support_db;Username=postgres;Password=postgres
       - ConnectionStrings__Redis=redis:6379
       - ConnectionStrings__ServiceBus=Endpoint=sb://servicebus-emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=VGhpcyBpcyBhIHNhbXBsZSBrZXkgZm9yIHRoZSBlbXVsYXRvci4=;UseDevelopmentEmulator=true;
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:80
     ports:
-      - "8080:8080"
+      - "8080:80"
     depends_on:
       - postgres
       - redis
@@ -60,7 +62,7 @@ services:
       dockerfile: SupportAgent.Worker/Dockerfile
     environment:
       - ConnectionStrings__DefaultConnection=Host=postgres;Database=support_db;Username=postgres;Password=postgres
-      - ConnectionStrings__ServiceBus=Endpoint=sb://servicebus-emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=VGhpcyBpcyBhIHNhbXBsZSBrZXkgZm9yIHRoZSBlbXVsYXRvci4=;UseDevelopmentEmulator=true;
+      - ConnectionStrings__ServiceBus=Endpoint=sb://localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=VGhpcyBpcyBhIHNhbXBsZSBrZXkgZm9yIHRoZSBlbXVsYXRvci4=;UseDevelopmentEmulator=true;
     depends_on:
       - postgres
       - servicebus-emulator
