@@ -1,6 +1,18 @@
-@UserAccountApi_HostAddress = http://localhost:5218
+@UserAccountApi_HostAddress = http://localhost:8080
 
-GET {{UserAccountApi_HostAddress}}/weatherforecast/
+### Get User Profile
+GET {{UserAccountApi_HostAddress}}/api/user/me/11999999999
 Accept: application/json
 
-###
+### Update User Profile
+PUT {{UserAccountApi_HostAddress}}/api/user/update
+Content-Type: application/json
+
+{
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "phoneNumber": "11999999999",
+  "name": "Augusto",
+  "email": "augusto@example.com",
+  "address": "Rua Exemplo, 123, Sao Paulo - SP",
+  "cpf": "12345678900"
+}

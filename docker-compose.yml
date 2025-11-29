@@ -57,13 +57,6 @@ services:
       - ollama_data:/root/.ollama
     networks:
       - app-network
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [ gpu ]
 
   user-account-api:
     image: ${DOCKER_REGISTRY-}useraccountapi
