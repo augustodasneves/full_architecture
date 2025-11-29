@@ -21,6 +21,13 @@ builder.Services.AddSingleton(sp =>
 // HTTP Client for LLM
 builder.Services.AddHttpClient<ILLMService, LLMService>();
 
+// HTTP Client for WhatsApp Proxy
+builder.Services.AddHttpClient<IWhatsAppService, WhatsAppHttpService>(client =>
+{
+    var whatsappProxyUrl = builder.Configuration["WhatsAppProxy:BaseUrl"] ?? "http://whatsapp-proxy-api:8080";
+    client.BaseAddress = new Uri(whatsappProxyUrl);
+});
+
 // Domain Services
 builder.Services.AddScoped<ConversationService>();
 builder.Services.AddScoped<FlowEngine>();

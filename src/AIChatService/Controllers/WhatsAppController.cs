@@ -30,26 +30,45 @@ public class WhatsAppController : ControllerBase
     }
 
     [HttpPost("webhook")]
-    public async Task<IActionResult> ReceiveMessage([FromBody] dynamic payload)
+    public async Task<IActionResult> ReceiveMessage([FromBody] System.Text.Json.JsonElement payload)
     {
-        _logger.LogInformation("Received webhook: {Payload}", (string)payload.ToString());
+        _logger.LogInformation("Received webhook: {Payload}", payload.ToString());
 
         // Simplified parsing for demo - assumes text message structure
         try
         {
-            // Navigate dynamic json to find message body and from number
+            // Navigate JSON to find message body and from number
             // This is highly dependent on Meta's API structure
-            var entry = payload.entry[0];
-            var changes = entry.changes[0];
-            var value = changes.value;
-            
-            if (value.messages != null)
+            if (payload.TryGetProperty("entry", out var entryArray) && 
+                entryArray.ValueKind == System.Text.Json.JsonValueKind.Array &&
+                entryArray.GetArrayLength() > 0)
             {
-                var message = value.messages[0];
-                string from = message.from;
-                string text = message.text.body;
+                var entry = entryArray[0];
+                
+                if (entry.TryGetProperty("changes", out var changesArray) &&
+                    changesArray.ValueKind == System.Text.Json.JsonValueKind.Array &&
+                    changesArray.GetArrayLength() > 0)
+                {
+                    var changes = changesArray[0];
+                    
+                    if (changes.TryGetProperty("value", out var value) &&
+                        value.TryGetProperty("messages", out var messagesArray) &&
+                        messagesArray.ValueKind == System.Text.Json.JsonValueKind.Array &&
+                        messagesArray.GetArrayLength() > 0)
+                    {
+                        var message = messagesArray[0];
+                        
+                        if (message.TryGetProperty("from", out var fromElement) &&
+                            message.TryGetProperty("text", out var textElement) &&
+                            textElement.TryGetProperty("body", out var bodyElement))
+                        {
+                            string from = fromElement.GetString() ?? "";
+                            string text = bodyElement.GetString() ?? "";
 
-                await _flowEngine.ProcessMessageAsync(from, text);
+                            await _flowEngine.ProcessMessageAsync(from, text);
+                        }
+                    }
+                }
             }
         }
         catch (Exception ex)

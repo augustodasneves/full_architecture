@@ -17,6 +17,66 @@ public class UserController : ControllerBase
         _context = context;
     }
 
+    [HttpPost("register")]
+    public async Task<ActionResult<UserProfileDto>> RegisterUser([FromBody] CreateUserDto dto)
+    {
+        // Validate if user already exists by phone number
+        var existingUser = await _context.Users
+            .FirstOrDefaultAsync(u => u.ContactInfo.PhoneNumber == dto.PhoneNumber);
+        
+        if (existingUser != null)
+        {
+            return Conflict(new { message = "Usuário com este número de telefone já existe." });
+        }
+
+        // Validate if CPF already exists
+        if (!string.IsNullOrEmpty(dto.Cpf))
+        {
+            var existingCpf = await _context.Users
+                .FirstOrDefaultAsync(u => u.Cpf == dto.Cpf);
+            
+            if (existingCpf != null)
+            {
+                return Conflict(new { message = "Usuário com este CPF já existe." });
+            }
+        }
+
+        // Create new user
+        var newUser = new User
+        {
+            Id = Guid.NewGuid(),
+            Name = dto.Name,
+            Cpf = dto.Cpf,
+            ContactInfo = new ContactInfo
+            {
+                PhoneNumber = dto.PhoneNumber,
+                Email = dto.Email
+            },
+            Address = new Address
+            {
+                Street = dto.Street,
+                City = dto.City,
+                State = dto.State,
+                ZipCode = dto.ZipCode
+            }
+        };
+
+        _context.Users.Add(newUser);
+        await _context.SaveChangesAsync();
+
+        var response = new UserProfileDto
+        {
+            Id = newUser.Id,
+            Name = newUser.Name,
+            Cpf = newUser.Cpf,
+            PhoneNumber = newUser.ContactInfo.PhoneNumber,
+            Email = newUser.ContactInfo.Email,
+            Address = $"{newUser.Address.Street}, {newUser.Address.City} - {newUser.Address.State}"
+        };
+
+        return CreatedAtAction(nameof(GetProfile), new { phoneNumber = newUser.ContactInfo.PhoneNumber }, response);
+    }
+
     [HttpGet("me/{phoneNumber}")]
     public async Task<ActionResult<UserProfileDto>> GetProfile(string phoneNumber)
     {

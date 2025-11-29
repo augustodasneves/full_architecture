@@ -32,6 +32,8 @@ services:
       MSSQL_SA_PASSWORD: "StrongPassword123!"
     ports:
       - "5672:5672"
+    volumes:
+      - ./src/ServiceBusConfig.json:/ServiceBus_Emulator/ConfigFiles/Config.json
     depends_on:
       - sql-edge
     networks:
@@ -81,12 +83,29 @@ services:
       - ConnectionStrings__Redis=redis:6379
       - ServiceBus__ConnectionString=Endpoint=sb://servicebus-emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
       - LLM__BaseUrl=http://ollama:11434
+      - WhatsAppProxy__BaseUrl=http://whatsapp-proxy-api:8080
     ports:
       - "8081:8080"
     depends_on:
       - redis
       - servicebus-emulator
       - ollama
+      - whatsapp-proxy-api
+    networks:
+      - app-network
+
+  whatsapp-proxy-api:
+    image: ${DOCKER_REGISTRY-}whatsappproxyapi
+    build:
+      context: .
+      dockerfile: src/WhatsAppProxyApi/Dockerfile
+    environment:
+      - WhatsApp__AccessToken=${WHATSAPP_ACCESS_TOKEN:-YOUR_META_ACCESS_TOKEN}
+      - WhatsApp__PhoneNumberId=${WHATSAPP_PHONE_NUMBER_ID:-YOUR_PHONE_NUMBER_ID}
+      - WhatsApp__ApiVersion=v21.0
+      - WhatsApp__BaseUrl=https://graph.facebook.com
+    ports:
+      - "8082:8080"
     networks:
       - app-network
 

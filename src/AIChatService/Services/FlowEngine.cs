@@ -10,13 +10,20 @@ public class FlowEngine
 {
     private readonly ConversationService _conversationService;
     private readonly ILLMService _llmService;
+    private readonly IWhatsAppService _whatsAppService;
     private readonly ServiceBusSender _serviceBusSender;
     private readonly ILogger<FlowEngine> _logger;
 
-    public FlowEngine(ConversationService conversationService, ILLMService llmService, ServiceBusClient serviceBusClient, ILogger<FlowEngine> logger)
+    public FlowEngine(
+        ConversationService conversationService, 
+        ILLMService llmService, 
+        IWhatsAppService whatsAppService,
+        ServiceBusClient serviceBusClient, 
+        ILogger<FlowEngine> logger)
     {
         _conversationService = conversationService;
         _llmService = llmService;
+        _whatsAppService = whatsAppService;
         _serviceBusSender = serviceBusClient.CreateSender("user-update-requests");
         _logger = logger;
     }
@@ -56,13 +63,15 @@ public class FlowEngine
         if (intent.Contains("UPDATE_REGISTRATION"))
         {
             state.CurrentStep = "ConfirmingUpdate";
-            // Send message: "Do you want to update your registration data?"
-            _logger.LogInformation("Sending to {Phone}: Do you want to update your registration data?", state.PhoneNumber);
+            var message = "Você deseja atualizar seus dados cadastrais?";
+            await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+            _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
         }
         else
         {
-            // Send default message
-             _logger.LogInformation("Sending to {Phone}: I can help you update your data. Just ask.", state.PhoneNumber);
+            var message = "Posso ajudá-lo a atualizar seus dados. É só pedir!";
+            await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+            _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
         }
     }
 
@@ -71,12 +80,16 @@ public class FlowEngine
         if (text.ToLower().Contains("sim") || text.ToLower().Contains("yes"))
         {
             state.CurrentStep = "CollectingPhone";
-            _logger.LogInformation("Sending to {Phone}: Please enter your new phone number.", state.PhoneNumber);
+            var message = "Por favor, digite seu novo número de telefone.";
+            await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+            _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
         }
         else
         {
             state.CurrentStep = "Idle";
-             _logger.LogInformation("Sending to {Phone}: Okay, cancelling.", state.PhoneNumber);
+            var message = "Ok, cancelando a atualização.";
+            await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+            _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
         }
     }
 
@@ -84,14 +97,18 @@ public class FlowEngine
     {
         state.CollectedData["NewPhoneNumber"] = text; // Validate here
         state.CurrentStep = "CollectingEmail";
-        _logger.LogInformation("Sending to {Phone}: Please enter your new email.", state.PhoneNumber);
+        var message = "Por favor, digite seu novo e-mail.";
+        await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+        _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
     }
 
     private async Task HandleCollectingEmail(ConversationState state, string text)
     {
         state.CollectedData["NewEmail"] = text; // Validate here
         state.CurrentStep = "CollectingAddress";
-        _logger.LogInformation("Sending to {Phone}: Please enter your new address.", state.PhoneNumber);
+        var message = "Por favor, digite seu novo endereço.";
+        await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+        _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
     }
 
     private async Task HandleCollectingAddress(ConversationState state, string text)
@@ -99,8 +116,9 @@ public class FlowEngine
         state.CollectedData["NewAddress"] = text;
         state.CurrentStep = "ConfirmingData";
         
-        var summary = $"Phone: {state.CollectedData["NewPhoneNumber"]}, Email: {state.CollectedData["NewEmail"]}, Address: {state.CollectedData["NewAddress"]}";
-        _logger.LogInformation("Sending to {Phone}: Confirm these details? {Summary}", state.PhoneNumber, summary);
+        var message = $"Por favor, confirme seus dados:\n\nTelefone: {state.CollectedData["NewPhoneNumber"]}\nEmail: {state.CollectedData["NewEmail"]}\nEndereço: {state.CollectedData["NewAddress"]}\n\nEstá correto? (sim/não)";
+        await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+        _logger.LogInformation("Sent confirmation request to {Phone}", state.PhoneNumber);
     }
 
     private async Task HandleConfirmingData(ConversationState state, string text)
@@ -121,12 +139,17 @@ public class FlowEngine
 
             state.CurrentStep = "Idle";
             state.CollectedData.Clear();
-            _logger.LogInformation("Sending to {Phone}: Update request submitted successfully.", state.PhoneNumber);
+            
+            var responseMessage = "✅ Solicitação de atualização enviada com sucesso! Seus dados serão atualizados em breve.";
+            await _whatsAppService.SendMessageAsync(state.PhoneNumber, responseMessage);
+            _logger.LogInformation("Update request submitted for {Phone}", state.PhoneNumber);
         }
         else
         {
             state.CurrentStep = "CollectingPhone"; // Restart loop
-             _logger.LogInformation("Sending to {Phone}: Let's start over. Phone number?", state.PhoneNumber);
+            var responseMessage = "Vamos começar novamente. Por favor, digite seu novo número de telefone.";
+            await _whatsAppService.SendMessageAsync(state.PhoneNumber, responseMessage);
+            _logger.LogInformation("Restarting data collection for {Phone}", state.PhoneNumber);
         }
     }
 }

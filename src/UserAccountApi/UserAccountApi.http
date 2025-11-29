@@ -1,5 +1,20 @@
 @UserAccountApi_HostAddress = http://localhost:8080
 
+### Register New User
+POST {{UserAccountApi_HostAddress}}/api/user/register
+Content-Type: application/json
+
+{
+  "name": "João Silva",
+  "cpf": "12345678900",
+  "phoneNumber": "5511999999999",
+  "email": "joao.silva@example.com",
+  "street": "Rua das Flores, 123",
+  "city": "São Paulo",
+  "state": "SP",
+  "zipCode": "01234-567"
+}
+
 ### Get User Profile
 GET {{UserAccountApi_HostAddress}}/api/user/me/11999999999
 Accept: application/json

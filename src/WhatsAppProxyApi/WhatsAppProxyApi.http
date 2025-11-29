@@ -1,0 +1,13 @@
+@WhatsAppProxyApi_HostAddress = http://localhost:8082
+
+### Send WhatsApp Message
+POST {{WhatsAppProxyApi_HostAddress}}/api/whatsapp/send
+Content-Type: application/json
+
+{
+  "to": "5511999999999",
+  "message": "Olá! Esta é uma mensagem de teste do WhatsApp Proxy API."
+}
+
+### Health Check
+GET {{WhatsAppProxyApi_HostAddress}}/api/whatsapp/health
