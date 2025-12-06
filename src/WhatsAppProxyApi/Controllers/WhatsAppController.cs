@@ -1,20 +1,49 @@
 using Microsoft.AspNetCore.Mvc;
 using Shared.DTOs;
+using Microsoft.Extensions.Options;
+using WhatsAppProxyApi.Models;
 using WhatsAppProxyApi.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WhatsAppProxyApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[AllowAnonymous]
 public class WhatsAppController : ControllerBase
 {
     private readonly MetaWhatsAppService _whatsAppService;
+    private readonly WhatsAppSettings _settings;
     private readonly ILogger<WhatsAppController> _logger;
 
-    public WhatsAppController(MetaWhatsAppService whatsAppService, ILogger<WhatsAppController> logger)
+    public WhatsAppController(MetaWhatsAppService whatsAppService, IOptions<WhatsAppSettings> settings, ILogger<WhatsAppController> logger)
     {
         _whatsAppService = whatsAppService;
+        _settings = settings.Value;
         _logger = logger;
+    }
+
+    [HttpGet("webhook")]
+    public IActionResult VerifyWebhook(
+        [FromQuery(Name = "hub.mode")] string mode,
+        [FromQuery(Name = "hub.verify_token")] string verifyToken,
+        [FromQuery(Name = "hub.challenge")] string challenge)
+    {
+        if (mode == "subscribe" && verifyToken == _settings.VerifyToken)
+        {
+            _logger.LogInformation("Webhook verified successfully.");
+            return Ok(challenge);
+        }
+
+        _logger.LogWarning("Webhook verification failed. Mode: {Mode}, Token: {Token}", mode, verifyToken);
+        return StatusCode(403);
+    }
+
+    [HttpPost("webhook")]
+    public IActionResult ReceiveWebhook([FromBody] object payload)
+    {
+        _logger.LogInformation("Received webhook payload: {Payload}", payload);
+        return Ok();
     }
 
     [HttpPost("send")]

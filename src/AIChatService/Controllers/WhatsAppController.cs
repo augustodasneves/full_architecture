@@ -1,10 +1,12 @@
 using AIChatService.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AIChatService.Controllers;
 
 [ApiController]
 [Route("api/whatsapp")]
+[AllowAnonymous]
 public class WhatsAppController : ControllerBase
 {
     private readonly FlowEngine _flowEngine;
