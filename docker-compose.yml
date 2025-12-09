@@ -57,8 +57,12 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
+      - ./scripts/init-ollama.sh:/init-ollama.sh
     networks:
       - app-network
+    entrypoint: [ "/bin/sh", "-c" ]
+    command: >
+      "ollama serve &  sleep 5 &&  ollama pull phi3 &&  wait"
 
   user-account-api:
     image: ${DOCKER_REGISTRY-}useraccountapi

@@ -62,14 +62,14 @@ public class WhatsAppController : ControllerBase
 
         var result = await _whatsAppService.SendTextMessageAsync(request.To, request.Message);
 
-        if (result.Success)
-        {
+        // if (result.Success)
+        // {
             return Ok(result);
-        }
-        else
-        {
-            return StatusCode(500, result);
-        }
+        // }
+        // else
+        // {
+        //     return StatusCode(500, result);
+        // }
     }
 
     [HttpGet("health")]

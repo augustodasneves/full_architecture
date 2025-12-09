@@ -31,7 +31,7 @@ public class LLMService : ILLMService
     {
         var request = new
         {
-            model = "llama3",
+            model = "phi3",
             prompt = prompt,
             stream = false
         };
