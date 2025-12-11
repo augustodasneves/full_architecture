@@ -1,4 +1,5 @@
 using AIChatService.Services;
+using AIChatService.Validators;
 using Azure.Messaging.ServiceBus;
 using Shared.Interfaces;
 using StackExchange.Redis;
@@ -27,6 +28,11 @@ builder.Services.AddHttpClient<IWhatsAppService, WhatsAppHttpService>(client =>
     var whatsappProxyUrl = builder.Configuration["WhatsAppProxy:BaseUrl"] ?? "http://whatsapp-proxy-api:8080";
     client.BaseAddress = new Uri(whatsappProxyUrl);
 });
+
+// Validators
+builder.Services.AddSingleton<PhoneValidator>();
+builder.Services.AddSingleton<EmailValidator>();
+builder.Services.AddSingleton<AddressValidator>();
 
 // Domain Services
 builder.Services.AddScoped<ConversationService>();
