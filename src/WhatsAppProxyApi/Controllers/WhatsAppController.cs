@@ -12,11 +12,11 @@ namespace WhatsAppProxyApi.Controllers;
 [AllowAnonymous]
 public class WhatsAppController : ControllerBase
 {
-    private readonly MetaWhatsAppService _whatsAppService;
+    private readonly BaileysWhatsAppService _whatsAppService;
     private readonly WhatsAppSettings _settings;
     private readonly ILogger<WhatsAppController> _logger;
 
-    public WhatsAppController(MetaWhatsAppService whatsAppService, IOptions<WhatsAppSettings> settings, ILogger<WhatsAppController> logger)
+    public WhatsAppController(BaileysWhatsAppService whatsAppService, IOptions<WhatsAppSettings> settings, ILogger<WhatsAppController> logger)
     {
         _whatsAppService = whatsAppService;
         _settings = settings.Value;
@@ -70,6 +70,26 @@ public class WhatsAppController : ControllerBase
         {
             return StatusCode(500, result);
         }
+    }
+
+    [HttpGet("qrcode")]
+    public async Task<IActionResult> GetQrCode()
+    {
+        var (success, qrCode, message) = await _whatsAppService.GetQrCodeAsync();
+        
+        if (success)
+        {
+            return Ok(new { success = true, qr = qrCode, message });
+        }
+        
+        return Ok(new { success = false, message });
+    }
+
+    [HttpGet("connection-status")]
+    public async Task<IActionResult> GetConnectionStatus()
+    {
+        var (connected, state) = await _whatsAppService.GetConnectionStatusAsync();
+        return Ok(new { connected, state });
     }
 
     [HttpGet("health")]

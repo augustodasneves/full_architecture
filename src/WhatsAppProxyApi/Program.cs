@@ -12,8 +12,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<WhatsAppSettings>(
     builder.Configuration.GetSection("WhatsApp"));
 
-// Register HttpClient for MetaWhatsAppService
-builder.Services.AddHttpClient<MetaWhatsAppService>();
+// Register HttpClient for BaileysWhatsAppService
+builder.Services.AddHttpClient<BaileysWhatsAppService>();
 
 var app = builder.Build();
 

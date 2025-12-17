@@ -98,18 +98,32 @@ services:
     networks:
       - app-network
 
+  baileys-whatsapp-service:
+    image: ${DOCKER_REGISTRY-}baileyswhatsappservice
+    build:
+      context: ./src/BaileysWhatsAppService
+      dockerfile: Dockerfile
+    environment:
+      - WEBHOOK_URL=http://ai-chat-service:8080/api/whatsapp/webhook
+    ports:
+      - "3000:3000"
+    volumes:
+      - baileys_auth:/app/auth_info
+    networks:
+      - app-network
+
   whatsapp-proxy-api:
     image: ${DOCKER_REGISTRY-}whatsappproxyapi
     build:
       context: .
       dockerfile: src/WhatsAppProxyApi/Dockerfile
     environment:
-      - WhatsApp__AccessToken=${WHATSAPP_ACCESS_TOKEN:-YOUR_META_ACCESS_TOKEN}
-      - WhatsApp__PhoneNumberId=${WHATSAPP_PHONE_NUMBER_ID:-YOUR_PHONE_NUMBER_ID}
-      - WhatsApp__ApiVersion=v21.0
-      - WhatsApp__BaseUrl=https://graph.facebook.com
+      - WhatsApp__BaileysServiceUrl=http://baileys-whatsapp-service:3000
+      - WhatsApp__VerifyToken=${WHATSAPP_VERIFY_TOKEN:-testes}
     ports:
       - "8082:8080"
+    depends_on:
+      - baileys-whatsapp-service
     networks:
       - app-network
 
@@ -134,3 +148,4 @@ networks:
 volumes:
   postgres_data:
   ollama_data:
+  baileys_auth:
