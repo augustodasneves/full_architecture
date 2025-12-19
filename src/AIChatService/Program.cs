@@ -1,6 +1,7 @@
 using AIChatService.Services;
 using AIChatService.Validators;
 using Azure.Messaging.ServiceBus;
+using MongoDB.Driver;
 using Shared.Interfaces;
 using StackExchange.Redis;
 
@@ -14,6 +15,13 @@ builder.Services.AddSwaggerGen();
 // Redis
 builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
     ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis") ?? "localhost"));
+
+// MongoDB
+builder.Services.AddSingleton<IMongoClient>(sp =>
+{
+    var connectionString = builder.Configuration["MongoDB:ConnectionString"];
+    return new MongoClient(connectionString);
+});
 
 // Service Bus
 builder.Services.AddSingleton(sp => 
@@ -33,6 +41,10 @@ builder.Services.AddHttpClient<IWhatsAppService, WhatsAppHttpService>(client =>
 builder.Services.AddSingleton<PhoneValidator>();
 builder.Services.AddSingleton<EmailValidator>();
 builder.Services.AddSingleton<AddressValidator>();
+
+// Anonymization and Flow History Services
+builder.Services.AddSingleton<DataAnonymizationService>();
+builder.Services.AddSingleton<FlowHistoryService>();
 
 // Domain Services
 builder.Services.AddScoped<ConversationService>();

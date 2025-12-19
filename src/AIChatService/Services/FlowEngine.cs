@@ -41,6 +41,16 @@ public class FlowEngine
     public async Task ProcessMessageAsync(string from, string text)
     {
         var state = await _conversationService.GetStateAsync(from);
+        
+        // Log mensagem recebida
+        await _conversationService.LogMessageAsync(state.FlowId, new FlowMessage
+        {
+            MessageId = Guid.NewGuid().ToString(),
+            Timestamp = DateTime.UtcNow,
+            Direction = MessageDirection.Incoming,
+            Content = text,
+            Step = state.CurrentStep
+        });
 
         switch (state.CurrentStep)
         {
@@ -75,12 +85,28 @@ public class FlowEngine
             state.CurrentStep = "ConfirmingUpdate";
             var message = "Você deseja atualizar seus dados cadastrais?";
             await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+            await _conversationService.LogMessageAsync(state.FlowId, new FlowMessage
+            {
+                MessageId = Guid.NewGuid().ToString(),
+                Timestamp = DateTime.UtcNow,
+                Direction = MessageDirection.Outgoing,
+                Content = message,
+                Step = state.CurrentStep
+            });
             _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
         }
         else
         {
             var message = "Posso ajudá-lo a atualizar seus dados. É só pedir!";
             await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+            await _conversationService.LogMessageAsync(state.FlowId, new FlowMessage
+            {
+                MessageId = Guid.NewGuid().ToString(),
+                Timestamp = DateTime.UtcNow,
+                Direction = MessageDirection.Outgoing,
+                Content = message,
+                Step = state.CurrentStep
+            });
             _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
         }
     }
@@ -92,6 +118,14 @@ public class FlowEngine
             state.CurrentStep = "CollectingPhone";
             var message = "Por favor, digite seu novo número de telefone.";
             await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+            await _conversationService.LogMessageAsync(state.FlowId, new FlowMessage
+            {
+                MessageId = Guid.NewGuid().ToString(),
+                Timestamp = DateTime.UtcNow,
+                Direction = MessageDirection.Outgoing,
+                Content = message,
+                Step = state.CurrentStep
+            });
             _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
         }
         else
@@ -99,6 +133,14 @@ public class FlowEngine
             state.CurrentStep = "Idle";
             var message = "Ok, cancelando a atualização.";
             await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+            await _conversationService.LogMessageAsync(state.FlowId, new FlowMessage
+            {
+                MessageId = Guid.NewGuid().ToString(),
+                Timestamp = DateTime.UtcNow,
+                Direction = MessageDirection.Outgoing,
+                Content = message,
+                Step = state.CurrentStep
+            });
             _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
         }
     }
@@ -283,5 +325,20 @@ public class FlowEngine
             _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, responseMessage);
             _logger.LogInformation("Restarting data collection for {Phone}", state.PhoneNumber);
         }
+    }
+    
+    // Helper method para enviar mensagem e logar no histórico
+    private async Task SendAndLogMessageAsync(ConversationState state, string message)
+    {
+        await _whatsAppService.SendMessageAsync(state.PhoneNumber, message);
+        await _conversationService.LogMessageAsync(state.FlowId, new FlowMessage
+        {
+            MessageId = Guid.NewGuid().ToString(),
+            Timestamp = DateTime.UtcNow,
+            Direction = MessageDirection.Outgoing,
+            Content = message,
+            Step = state.CurrentStep
+        });
+        _logger.LogInformation("Sent to {Phone}: {Message}", state.PhoneNumber, message);
     }
 }

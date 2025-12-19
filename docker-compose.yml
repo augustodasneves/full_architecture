@@ -23,6 +23,19 @@ services:
     networks:
       - app-network
 
+  mongodb:
+    image: mongo:7-jammy
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
   servicebus-emulator:
     image: mcr.microsoft.com/azure-messaging/servicebus-emulator:latest
     container_name: servicebus-emulator
@@ -85,6 +98,9 @@ services:
       dockerfile: src/AIChatService/Dockerfile
     environment:
       - ConnectionStrings__Redis=redis:6379
+      - MongoDB__ConnectionString=mongodb://admin:password123@mongodb:27017
+      - MongoDB__DatabaseName=whatsapp_flows
+      - Anonymization__SaltKey=change-this-in-production-12345
       - ServiceBus__ConnectionString=Endpoint=sb://servicebus-emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
       - LLM__BaseUrl=http://ollama:11434
       - WhatsAppProxy__BaseUrl=http://whatsapp-proxy-api:8080
@@ -92,6 +108,7 @@ services:
       - "8081:8080"
     depends_on:
       - redis
+      - mongodb
       - servicebus-emulator
       - ollama
       - whatsapp-proxy-api
@@ -149,3 +166,4 @@ volumes:
   postgres_data:
   ollama_data:
   baileys_auth:
+  mongodb_data:
