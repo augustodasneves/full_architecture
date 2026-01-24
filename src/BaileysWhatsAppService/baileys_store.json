@@ -1,0 +1,2767 @@
+{
+  "555199801001@s.whatsapp.net": [
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC61F86EAEBD312BF3F08A709228FCC2"
+      },
+      "messageTimestamp": 1769214848,
+      "broadcast": false,
+      "status": 2,
+      "messageStubType": 2,
+      "messageStubParameters": [
+        "Bad MAC"
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC71EA0022E5D31D26B1BA6578A3BD3C"
+      },
+      "messageTimestamp": 1769214849,
+      "broadcast": false,
+      "status": 2,
+      "messageStubType": 2,
+      "messageStubParameters": [
+        "Bad MAC"
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "ACC55DB5303541CCC8B9BD8F11B1753C"
+      },
+      "messageTimestamp": 1769214852,
+      "broadcast": false,
+      "status": 2,
+      "messageStubType": 2,
+      "messageStubParameters": [
+        "Bad MAC"
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC6470A31DB0263069437704D4C654D2"
+      },
+      "messageTimestamp": 1769214852,
+      "broadcast": false,
+      "status": 2,
+      "messageStubType": 2,
+      "messageStubParameters": [
+        "Bad MAC"
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC2BF57DBF4E635BDF8BCD2974BFE3DF"
+      },
+      "messageTimestamp": 1769214853,
+      "broadcast": false,
+      "status": 2,
+      "messageStubType": 2,
+      "messageStubParameters": [
+        "Bad MAC"
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "ACFDCD59850A58FC7A15D157FEB83125"
+      },
+      "messageTimestamp": 1769214853,
+      "broadcast": false,
+      "status": 2,
+      "messageStubType": 2,
+      "messageStubParameters": [
+        "Bad MAC"
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC134EBC2281BFA4B30405DA6509494E"
+      },
+      "messageTimestamp": 1769214854,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB05EC00F4CEE4C408E6D",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "NOT_FOUND"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC964FDE93989D8C08A871D16BFA5E24"
+      },
+      "messageTimestamp": 1769214859,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB073C1C6EC804E98450D",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "NOT_FOUND"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "ACC35F52BA71B243485EC7F7B28852AF"
+      },
+      "messageTimestamp": 1769214864,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB02D384594A39D1B34F6",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "NOT_FOUND"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC647A0BAA399AB6ADFB22A98E849BA6"
+      },
+      "messageTimestamp": 1769214870,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB0B484C89EC5F3A3793A",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "NOT_FOUND"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "ACA6370BA2887883674A2F59EC9BCDC6"
+      },
+      "messageTimestamp": 1769214875,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB0DEC26A4B7FD0EECF82",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "NOT_FOUND"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC3BF50A9D04CD7B345E446C5102DCBB"
+      },
+      "messageTimestamp": 1769214880,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB0C9EEA0E24A445EF48B",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "NOT_FOUND"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "ACFEF19DF9E6913873D309B27EB382F6"
+      },
+      "messageTimestamp": 1769218688,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB05382D83DB1A2ED755C",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "SUCCESS",
+                "placeholderMessageResendResponse": {
+                  "webMessageInfoBytes": "CjUKGzU1NTE5NjY2OTEzNkBzLndoYXRzYXBwLm5ldBAAGhQzQTREMjczNDQ4NDc3MEFFREUxRBIpCgJPaZoCIhogU914B3zR6xxWkOdm/zb8J5cwXQyuP2ZCA96lrKAq3VIY+8TQywaKAyBT3XgHfNHrHFaQ52b/NvwnlzBdDK4/ZkID3qWsoCrdUvIDFgoUAQ8jTbFq4tDdn4m+91Q2I/NQzSuIBAA="
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC5A8F9B788FCC53514D4A48975C561C"
+      },
+      "messageTimestamp": 1769220759,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB0F928A89431554F2213",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "SUCCESS",
+                "placeholderMessageResendResponse": {
+                  "webMessageInfoBytes": "CjkKEzE2MTg1NTg1OTM4MDQ2MUBsaWQQARogQUMwNDNDRTVBOENGMTQ0NzUyQjUxNTI1MTgwQzgxRTAS4ARCuAQKwgFodHRwczovL21tZy53aGF0c2FwcC5uZXQvdi90NjIuNzExNy0yNC81MzM0ODQ5NzVfMTI0OTY5NTM2Mzg4NjU0M180NDMzODY2MDcxMzY1ODg2MTQxX24uZW5jP2NjYj0xMS00Jm9oPTAxX1E1QWEzZ0Y2OVNweW5qcWZhQVV3eFdGRkJ5bGZoQ25YRUVzX0R5TFJVVnZoN25sbk1nJm9lPTY5OUJBODI5Jl9uY19zaWQ9NWUwM2UwJm1tczM9dHJ1ZRIWYXVkaW8vb2dnOyBjb2RlY3M9b3B1cxogZY896tAQZC/GHF1kFijar84nxyigv2r4SywL1Mfx1PAg9P4YKLwBMAE6IA/4oSZcCQYTby1HEuqDFX2IcRGK0kKmhuAHfjtuXU2oQiA3XskMCjLLWd43Q1oPAqNcRkc9NByCfZadFI+JB2aci0qgAS92L3Q2Mi43MTE3LTI0LzUzMzQ4NDk3NV8xMjQ5Njk1MzYzODg2NTQzXzQ0MzM4NjYwNzEzNjU4ODYxNDFfbi5lbmM/Y2NiPTExLTQmb2g9MDFfUTVBYTNnRjY5U3B5bmpxZmFBVXd4V0ZGQnlsZmhDblhFRXNfRHlMUlVWdmg3bmxuTWcmb2U9Njk5QkE4MjkmX25jX3NpZD01ZTAzZTBQpsbQywaaAUAARQAAKwA7AB8AVQA1OEVBAEtMUDdBAEU3HUE3CEIzRjQ8RDZLMiYAOgBDSDQUABQAOi8jOxkuSwAGAxIAAEoAmgIiGiDD0N/Gn3ngcaYeqayA/XYtGti16mVBP5X88MMoD/TMFRjgx9DLBiADMOHH0MsGsgI8CjpNZWRpYS9XaGF0c0FwcCBWb2ljZSBOb3Rlcy8yMDI2MDQvUFRULTIwMjYwMTIzLVdBMDAxNi5vcHVzwgIfChMxNjE4NTU4NTkzODA0NjFAbGlkEOLH0MsGGAAgAIoDIMPQ38afeeBxph6prID9di0a2LXqZUE/lfzwwygP9MwVmgMbNTU1MTk5ODAxMDAxQHMud2hhdHNhcHAubmV0iAQA"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555199801001@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC993033E51D5060883AB2F0829B75F4"
+      },
+      "messageTimestamp": 1769220764,
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "protocolMessage": {
+          "type": "PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE",
+          "peerDataOperationRequestResponseMessage": {
+            "peerDataOperationRequestType": "PLACEHOLDER_MESSAGE_RESEND",
+            "stanzaId": "3EB0B7835CC2857FAB96A2",
+            "peerDataOperationResult": [
+              {
+                "mediaUploadResult": "SUCCESS",
+                "placeholderMessageResendResponse": {
+                  "webMessageInfoBytes": "CkEKGzU1NTE5NzY1ODAwNkBzLndoYXRzYXBwLm5ldBABGiBBQzUxNzc2MTZGNDgwNzE4RDc3MzJEMUE0QjRBMTM4QxIpCgJPaZoCIhogt9iia1OxsmpOZLBUQwQadyDV/tkCfgDY2973FA0gFcgYrtDQywYgA8ICJwobNTU1MTk3NjU4MDA2QHMud2hhdHNhcHAubmV0EK7Q0MsGGAAgAIoDILfYomtTsbJqTmSwVEMEGncg1f7ZAn4A2Nve9xQNIBXImgMbNTU1MTk5ODAxMDAxQHMud2hhdHNhcHAubmV0iAQA"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "216947488772305@lid": [
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0F24121356BC2F46796"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Muitas tentativas inválidas. O processo de atualização foi cancelado. Você pode começar novamente quando quiser."
+        }
+      },
+      "messageTimestamp": "1769220623",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC2F6EAD05D57998BF0495FC33D5A078",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769220629,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "/lGNQJOFJuZgtxhfqL6qxogtey1IHwabJm2vUvnpc8w="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0189BD7E6B1CE22A4E1"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPor favor, comece digitando seu novo número de telefone (com DDD)."
+        }
+      },
+      "messageTimestamp": "1769220629",
+      "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC0688A515970F1799BE989C654CAC2B",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769220763,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "AqvhB028kgWYO+MNzM7lEUhW4HeCDnieJGS3VvcvYvU="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB04D38157DBCC131E1F7"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu número de telefone (com DDD)."
+        }
+      },
+      "messageTimestamp": "1769220766",
+      "status": "DELIVERY_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC898B25EAF8E45F8CA5788D2A9D6E20",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769220976,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "6IlTx9n6uzRA5v9zfCP3zKrazUnlQd/ZtxLOVcZJl0k="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB01A2F70B1F7A4E5A656"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 2"
+        }
+      },
+      "messageTimestamp": "1769220978",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACE57DC9663C237F5196559F2FA57399",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221032,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "I",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "DKPGjDenGPW2moRGlyGW9ybFtzMjeouiYsNbbidjCiI="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0F994637222A8F85C0C"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 1"
+        }
+      },
+      "messageTimestamp": "1769221032",
+      "status": "DELIVERY_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC73490F78462A8BE500F66F79279E82",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221034,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "T",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "sCm490ZQkekf/4psjrG1r1PN2r3sQ39v8K4u98cFgUU="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0CB6309233AED8FCBF6"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Muitas tentativas inválidas. O processo de cadastro foi cancelado. Você pode começar novamente quando quiser."
+        }
+      },
+      "messageTimestamp": "1769221035",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC1849808D6B8527C688EF9EA187CAA9",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221044,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "R2BzGkpkegBzZORLrNKiIi4NSTMK66cdwhZANTdYpoA="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0396519E0F6E196B580"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu número de telefone (com DDD)."
+        }
+      },
+      "messageTimestamp": "1769221045",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC2C842EB6E6A375B8BE50B0FC98C688",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221105,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "51997658006",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "+SzaYrdOxRIjUNLLvXvdoXS8xpQC9HlNmh8N10sGDmw="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB09A323D8F6BA47D6950"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Telefone salvo com sucesso!\n\nPor favor, digite seu e-mail."
+        }
+      },
+      "messageTimestamp": "1769221105",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC1BB57E58AA7E2D7101DE63F4E4FBAD",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221118,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Augusto@augusto.com",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "1lqHPC78xdikrxtqC0t/+dFIg+BaPvN72ce1qthN+RY="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0B887812BE7A9522F72"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ E-mail salvo com sucesso!\n\nPor favor, digite seu endereço completo."
+        }
+      },
+      "messageTimestamp": "1769221119",
+      "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC8EEF45DE4A5F3BFFFBAE463671EA50",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221128,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Rua x,cvb  1234",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "b0Q5cIfH6pY+u5/UqHFjtjmEUkNskqka/SBDKVndRPQ="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0B7D34260DD9DDACC71"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Endereço salvo com sucesso!\n\nPor favor, confirme seus dados de cadastro:\n\n📱 Telefone: 51997658006\n📧 Email: augusto@augusto.com\n🏠 Endereço: Rua x,cvb 1234\n\nEstá correto? (sim/não)"
+        }
+      },
+      "messageTimestamp": "1769221128",
+      "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACAB772B3763E545902586C7644BB5F3",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221132,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Sim",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "eXhmW7UcvVuP4aZDPphZGEWKXcm/s5zy/3WHw6VoPcc="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB057BDA3FB0574D7AEF0"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Cadastro realizado com sucesso! Bem-vindo ao nosso sistema."
+        }
+      },
+      "messageTimestamp": "1769221133",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACFBE1EE5E01575A8D3E2949E5200BC9",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221138,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "+CmXQ0IgAUZGovwfs7fh1OrtDUszHT+FFdHgbZ5ZoCs="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB066260312909D0BDA03"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu número de telefone (com DDD)."
+        }
+      },
+      "messageTimestamp": "1769221138",
+      "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACF6C8366C325AB387DC7A32056D7FE9",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222108,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "H8KtVghi6JUMXukYI+8TOjwumR4SRjSYNU3NJ6+c8Wo="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0E3420F28F8B2C4AF2B"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 2"
+        }
+      },
+      "messageTimestamp": "1769222109",
+      "status": "DELIVERY_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC847BBF67025DA7E5EB019EAC0E4507",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222112,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "8CAPfGgPwz8tRfZwf2TqE9guQwOEeCgpaeFGipWFlcI="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB081A63853EE5C452038"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 1"
+        }
+      },
+      "messageTimestamp": "1769222112",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC7BEE9B131561B9CC43D4BDD85F646C",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222113,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "kmeWDnyNIhpl6sdPijTDqmXe3hitfQTR4+wB/sbNlok="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB069D15A5289FD649322"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Muitas tentativas inválidas. O processo de cadastro foi cancelado. Você pode começar novamente quando quiser."
+        }
+      },
+      "messageTimestamp": "1769222114",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC1219F7CE1E239A694D7FDC717632E7",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222116,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "vBPbGhuPYsVi7hrlh6W2i9RRuVU1udvOCro8gO/Ptyc="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB09948CA5EBBC3D186F1"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu número de telefone (com DDD)."
+        }
+      },
+      "messageTimestamp": "1769222117",
+      "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACFAD629E209275515B6519E5DA838F2",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222126,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "51 99765-8006",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "u/o1X6waCvPehM+m7GjE0guL+3qutMBtB5MIRMkx8KQ="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB081135C8C93A60CC213"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Telefone salvo com sucesso!\n\nPor favor, digite seu e-mail."
+        }
+      },
+      "messageTimestamp": "1769222127",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACF794562B193561CB3D58BD52945FD7",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222140,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Testes@trstes.com.br",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "w5mvOrHo0CNm1N9syS61WirkU8a/XzPhUEAIZ9NuOGI="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0DEBE07767500F65291"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ E-mail salvo com sucesso!\n\nPor favor, digite seu endereço completo."
+        }
+      },
+      "messageTimestamp": "1769222141",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC3A9F767EA1FD1D56AF666CFAC7A063",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222147,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Testes testes 1ww",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "VyQ7B5i3dzh/8PUiXNPm/eOnw9+Y+FKLLTXiE7+8jos="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0CAB468F1CDF5DE77BA"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Endereço salvo com sucesso!\n\nPor favor, confirme seus dados de cadastro:\n\n📱 Telefone: 51997658006\n📧 Email: testes@trstes.com.br\n🏠 Endereço: Testes testes 1ww\n\nEstá correto? (sim/não)"
+        }
+      },
+      "messageTimestamp": "1769222147",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC765003312772E9F811B87C1A89BC12",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222149,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Sim",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "P6MMBiFi6YsFWRiMXNEvowpHY4caGjs0USLXyAL/M/U="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB092DECF6E09A1B1BD9A"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Cadastro realizado com sucesso! Bem-vindo ao nosso sistema."
+        }
+      },
+      "messageTimestamp": "1769222150",
+      "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "AC0C7D91AAA22091CBD9BF5D84057C53"
+      },
+      "messageTimestamp": 1769222170,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "status": 2,
+      "message": {
+        "conversation": "Oi"
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACA2A15E758E2833CC0EF873FD25FF91",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222209,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "xl6Tdcfn01oRUkkPRFc6wNOwhk4AmmFJ48or/vqqJTI="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB019015DFF4185DCD6D0"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu número de telefone (com DDD)."
+        }
+      },
+      "messageTimestamp": "1769222210",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC70175CDDC295004941977A486B8A57",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222495,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "tv7yCrV2Wy1rDCX4AbOsPxbmBmZsXHCXc5m7Jt6HXiM="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0404937FA550A279080"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 2"
+        }
+      },
+      "messageTimestamp": "1769222496",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC78890E1B42B03CDEFD3606919CB8E5",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222499,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "x9MacbzAWzNN2A7kFC16GNr+jIncwlXrxH0S495MebU="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB037B289094CC80E427F"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 1"
+        }
+      },
+      "messageTimestamp": "1769222499",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACE482422AD989A55E8C9C54CBA6D05F",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222500,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "ytqSgnADBOE1QkIfSKIMFTHVcOeXu/Ls7ilrVvSmzys="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0FD3536CE6BB2514139"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Muitas tentativas inválidas. O processo de cadastro foi cancelado. Você pode começar novamente quando quiser."
+        }
+      },
+      "messageTimestamp": "1769222501",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "AC0BAFAE792D14AB11E42EDCD883055B",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769222503,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "y+mP2kXmwuaou54PKfdCT4bf4mHwo8ZQvDMmDRKqAko="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0D3A5266C2B55EAB7D4"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu número de telefone (com DDD)."
+        }
+      },
+      "messageTimestamp": "1769222503",
+      "status": "PENDING"
+    }
+  ],
+  "120363419579963780@g.us": [
+    {
+      "key": {
+        "remoteJid": "120363419579963780@g.us",
+        "fromMe": false,
+        "id": "3EB07322A561CFE0BFA650",
+        "participant": "233036922777631@lid",
+        "participantPn": "5511970389432@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769215034,
+      "pushName": "EQUIPE ICL 5",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "120363419579963780@g.us",
+          "axolotlSenderKeyDistributionMessage": "Mwjz0d36BhAAGiCkQ9gT8nVYMbXBtZCmie6m9P0OJwP2b0Ec/p9O1itqvCIhBerADQeDcPehDg9eCXQR5lphdExX/cRqgjZVoj9STXlG"
+        },
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "120363419579963780@g.us",
+            "fromMe": false,
+            "id": "3ACCF3BD3AADD25C7513DE",
+            "participant": "5511970389432:13@s.whatsapp.net"
+          },
+          "text": "",
+          "senderTimestampMs": "1769215030495"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "120363419579963780@g.us",
+        "fromMe": false,
+        "id": "3EB04E543C992ED72F0B869D91B85FD6D3A4E880",
+        "participant": "233036922777631@lid",
+        "participantPn": "5511970389432@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769215034,
+      "pushName": "EQUIPE ICL 5",
+      "broadcast": false,
+      "message": {
+        "extendedTextMessage": {
+          "text": "🤔 *Quer entender o cenário econômico de 2026 com Edu Moreira?* \n\nComo muitos aqui já participaram de encontros do ICL e do Investidor Mestre, queriamos deixar um convite muito especial.\n\nNo dia *29/01*, às 20h, o Edu vai apresentar o *Mapa da Mina 2026*, um evento gratuito para entender o cenário econômico do ano.\n\nInscreva-se grátis: https://edu1.com.br/m2sayd/ \n\nUma leitura profunda que leva em consideração a política, juros, dólar e os principais riscos e oportunidades para quem quer investir com mais segurança ao longo do ano.\n\n👉 Inscrição gratuita: https://edu1.com.br/m2sayd/\n\nVale muito a pena para começar o ano mais preparado."
+        },
+        "messageContextInfo": {
+          "messageSecret": "3a8KL4dYst8xyDgwilFKjwo4Z7aZgI1FxxI03nEOXJU="
+        }
+      }
+    }
+  ],
+  "120363044136520982@g.us": [
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": false,
+        "id": "3A1C5053D0C1A9EB229B",
+        "participant": "87046387404822@lid",
+        "participantPn": "555195366583@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769215142,
+      "pushName": "Scarlatt",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "120363044136520982@g.us",
+          "axolotlSenderKeyDistributionMessage": "Mwjdy/etAxAAGiD6x4DpX2Uk2UJ8FgvmUHbq84mPoKtGp0+GxN6JzWyy0CIhBVVOuTaVHlWZ2/sN4RIP2+q29ANq5JbRNTMju1S3Z0Me"
+        },
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderTimestamp": "1769211281",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1767404104"
+          },
+          "deviceListMetadataVersion": 2
+        },
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "120363044136520982@g.us",
+            "fromMe": false,
+            "id": "A5CA36EF1156E76D237141B9E02D3518",
+            "participant": "136743219163278@lid"
+          },
+          "text": "🐕",
+          "senderTimestampMs": "1769215135066"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": true,
+        "id": "3EB0903BCE4488910FC3E3"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Você deseja atualizar seus dados cadastrais?"
+        }
+      },
+      "messageTimestamp": "1769215173",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net"
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": false,
+        "id": "AC3E5A853BB3DC496CDE628420C3C390",
+        "participant": "36979785879618@lid",
+        "participantPn": "555195378869@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769216818,
+      "pushName": "Andriele",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "120363044136520982@g.us",
+          "axolotlSenderKeyDistributionMessage": "Mwjvl+7YBRACGiAA8HENze/oZs7YWK10ylrnfl36wqsf+SJ2EOYhCDyRbiIhBZIOn8X9rRjCEFxdms07FnKEtzHp293E8egiax6FgpR8"
+        },
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2
+        },
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "120363044136520982@g.us",
+            "fromMe": false,
+            "id": "A5CA36EF1156E76D237141B9E02D3518",
+            "participant": "136743219163278@lid"
+          },
+          "text": "",
+          "senderTimestampMs": "1769216811002"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": false,
+        "id": "ACB53D1E186C504C4B891EF785E56CE8",
+        "participant": "242837568376923@lid",
+        "participantPn": "555196939595@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769217011,
+      "pushName": "Jaqueline",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "120363044136520982@g.us",
+          "axolotlSenderKeyDistributionMessage": "MwiClKa2BRACGiBIJ+XcKVB2A7b+P0mz5Vx5LiCN16JnL0P7wLUlaBAa8iIhBcU1AWHPcY1/IM7TfoxHUKTbtycAwDCrZN1Q6HhAAi1p"
+        },
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "+gB48Mq20rrRWQ==",
+            "senderTimestamp": "1768343125",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2
+        },
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "120363044136520982@g.us",
+            "fromMe": false,
+            "id": "A5F5EEDCA4BCCB70E5DC1347A9EA4852",
+            "participant": "136743219163278@lid"
+          },
+          "text": "👍🏼",
+          "senderTimestampMs": "1769217004354"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": true,
+        "id": "3EB0FF6EA55C74E4613BA1"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Você deseja atualizar seus dados cadastrais?"
+        }
+      },
+      "messageTimestamp": "1769217018",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net"
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": false,
+        "id": "AC0F261D65A0E77DC79F1E181C360FB5",
+        "participant": "169539673260271@lid",
+        "participantPn": "555196832968@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769217549,
+      "pushName": "Carvalho",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "120363044136520982@g.us",
+          "axolotlSenderKeyDistributionMessage": "MwjAmb+ABhAHGiDkEu4UqCc5hSvVBpqBDnuwaypgCq0nT7CAscoHQuVUwSIhBX59hJLI7gCiQLMEwf43zW22Qh2yJtXKbq9CIm1CaUkV"
+        },
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2
+        },
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "120363044136520982@g.us",
+            "fromMe": false,
+            "id": "A5CA36EF1156E76D237141B9E02D3518",
+            "participant": "136743219163278@lid"
+          },
+          "text": "😂",
+          "senderTimestampMs": "1769217546145"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": true,
+        "id": "3EB0CB6C47F19E14837C33"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Ok, cancelando a atualização."
+        }
+      },
+      "messageTimestamp": "1769217550",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net"
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": false,
+        "id": "ACEF070BE3086EFFA865AEB5F1CCB0DE",
+        "participant": "211999770284260@lid",
+        "participantPn": "555184833934@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221000,
+      "pushName": "Marion",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "120363044136520982@g.us",
+          "axolotlSenderKeyDistributionMessage": "MwibzOieAxAGGiCqwpF6Mv01r8Bz3G7C2yyu2XGmE4V6xsf+/UdHvSxbfSIhBfwGzcgf/TiW99Iscxw9R/eU0HkH9sV3GGhLjDG07PI/"
+        },
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2
+        },
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "120363044136520982@g.us",
+            "fromMe": false,
+            "id": "A5F5EEDCA4BCCB70E5DC1347A9EA4852",
+            "participant": "136743219163278@lid"
+          },
+          "text": "👍🏻",
+          "senderTimestampMs": "1769220988344"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": false,
+        "id": "A5B668BB0ED280EA5D2A1B0F69B2B7DF",
+        "participant": "136743219163278@lid",
+        "participantPn": "555181122013@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221718,
+      "pushName": "Gravataí 24 Horas",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "120363044136520982@g.us",
+          "axolotlSenderKeyDistributionMessage": "MwjvseDIBhAYGiCwf+pilNaGmxQj7CRvvB98XgzHK9x6uw5jviApGjLeeCIhBW2P4o5bnT13CJLHRzID+Yop3G5htX+FmihC/cG99sAE"
+        },
+        "extendedTextMessage": {
+          "text": "O local foi isolado para o trabalho da perícia. Veja o vídeo!\n\n*Compartilhe esta notícia!*\nhttps://gravatai24horas.com.br/motociclista-morre-em-grave-acidente-entre-carro-e-moto-na-ers-020-em-gravatai/\n\nSiga-nos instagram.com/gravatai24horas\n\nSiga-nos tiktok.com/@gravatai24horas\n\nSiga-nos facebook.com/gravatai24horas",
+          "matchedText": "https://gravatai24horas.com.br/motociclista-morre-em-grave-acidente-entre-carro-e-moto-na-ers-020-em-gravatai/",
+          "description": "Um motociclista morreu em um grave acidente em um carro e sua moto na noite desta sexta-feira (23),na ERS-020, em Gravataí.",
+          "title": "Motociclista morre em grave acidente entre carro e moto na ERS-020, em Gravataí",
+          "previewType": "NONE",
+          "jpegThumbnail": "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",
+          "contextInfo": {
+            "expiration": 7776000,
+            "disappearingMode": {
+              "initiator": "CHANGED_IN_CHAT",
+              "trigger": "UNKNOWN"
+            }
+          },
+          "thumbnailDirectPath": "/v/t62.36144-24/534337905_25724940227170557_7391438650173635696_n.enc?ccb=11-4&oh=01_Q5Aa3gE36pwnyool2X7wc_FSlwQiut212nLeNIyMrZunLFJCaA&oe=699B96FA&_nc_sid=5e03e0",
+          "thumbnailSha256": "Dy0eKeoIaPelPUpVXYmyNgcM9N4hJKuIEPGCPgGmWY4=",
+          "thumbnailEncSha256": "sn9pAqMMteHMOrxrKC+47QdOw4e1XXlNpq7Rv9Yw8pU=",
+          "mediaKey": "3zCrCKeUh7H6iJTZjmg2agenXhX2+ZYxEzu6k0lpz1k=",
+          "mediaKeyTimestamp": "1769221389",
+          "thumbnailHeight": 575,
+          "thumbnailWidth": 1024,
+          "inviteLinkGroupTypeV2": "DEFAULT",
+          "faviconMMSMetadata": {
+            "thumbnailDirectPath": "/v/t62.36144-24/532447211_26080867101536737_3653897983114703015_n.enc?ccb=11-4&oh=01_Q5Aa3gEfvf1jdR024fSulgqAAOgk3-HKWedB080eIL-xXPACnw&oe=699BB4CD&_nc_sid=5e03e0",
+            "thumbnailSha256": "BGT0i/K/2MC8qEqZuGpMT8zcvJIad1weRWZgwuOzsZY=",
+            "thumbnailEncSha256": "CT/sx8ahm+hZyGqnfcrnFLFrwTkefi3m8Z2+/VDNQ6g=",
+            "mediaKey": "mafj0f58vDtWEr57LwmkR75gbqUxb3qIIb6MEsQrbSc=",
+            "mediaKeyTimestamp": "1769221389",
+            "thumbnailHeight": 48,
+            "thumbnailWidth": 48
+          }
+        },
+        "messageContextInfo": {
+          "messageSecret": "Rwzb9qA3Bjq/U/Px96lWIxvTRlgYbf5wQ8clwHXItlw="
+        }
+      },
+      "verifiedBizName": "Gravataí 24 Horas"
+    },
+    {
+      "key": {
+        "remoteJid": "120363044136520982@g.us",
+        "fromMe": false,
+        "id": "AC6E6446A3DE310AE4919F347216D34D",
+        "participant": "100992012042420@lid",
+        "participantPn": "555192687532@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221737,
+      "pushName": "xodó",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "120363044136520982@g.us",
+          "axolotlSenderKeyDistributionMessage": "MwjgksqTBRACGiCrQ8/q+tVFoMDVq821RfnbB/FzymCl7A8nER1NxtxxmSIhBaswa9cXSVwneHThGd/U7DtMZdUhVjrpeMOmHq4GdwpE"
+        },
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderTimestamp": "1768405921",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2
+        },
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "120363044136520982@g.us",
+            "fromMe": false,
+            "id": "A5CA36EF1156E76D237141B9E02D3518",
+            "participant": "136743219163278@lid"
+          },
+          "text": "😂",
+          "senderTimestampMs": "1769221732689"
+        }
+      }
+    }
+  ],
+  "555184060936-1507731339@g.us": [
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC8F698317242D1B10B89AEFCE5DA8CF",
+        "participant": "207726227505328@lid",
+        "participantPn": "555191053552@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769216193,
+      "pushName": "Lisi",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "555184060936-1507731339@g.us",
+          "axolotlSenderKeyDistributionMessage": "Mwij1ezKBhA7GiB3MPIgOm+NB577TfeHiu8ie2tIUY+3Ti7PESb4+sTXKiIhBf+gL01logyoguWFKmQ/OMcxpQ9p2tOTuvrF0ERfMawS"
+        },
+        "imageMessage": {
+          "url": "https://mmg.whatsapp.net/v/t62.7118-24/534204888_1222110426691425_2356577987715817693_n.enc?ccb=11-4&oh=01_Q5Aa3gGoiD3vF4vupP8qqJLId9YABETRYlwXWR7njeTuIqEIsQ&oe=699B92D2&_nc_sid=5e03e0&mms3=true",
+          "mimetype": "image/jpeg",
+          "caption": "Ta estragado?",
+          "fileSha256": "9S/6ZS26zV8CsIpuCYI90cU/NYBvrIxwzBKCM3ydAd0=",
+          "fileLength": "133202",
+          "height": 1600,
+          "width": 900,
+          "mediaKey": "gSJR/fiE7neAn2wtEqiqUfjWLaL+OU/ay7dcvkPC8MU=",
+          "fileEncSha256": "oBwritD3xsiMt4k8+LIqSoeYpXK3R22hPFICq2OWLQw=",
+          "directPath": "/v/t62.7118-24/534204888_1222110426691425_2356577987715817693_n.enc?ccb=11-4&oh=01_Q5Aa3gGoiD3vF4vupP8qqJLId9YABETRYlwXWR7njeTuIqEIsQ&oe=699B92D2&_nc_sid=5e03e0",
+          "mediaKeyTimestamp": "1769216177",
+          "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAD8AIwMBIgACEQEDEQH/xAAvAAADAQEBAQAAAAAAAAAAAAAAAwQFAgEGAQEBAQEAAAAAAAAAAAAAAAAAAQMC/9oADAMBAAIQAxAAAAC7NrzovJ+SkmDUw9358DgGig3sxzdMke9d2ZQ4y1vTWp1PpxMKiAl//8QAJBAAAwACAQMDBQAAAAAAAAAAAAECAxESEyExIlFxFDIzQVL/2gAIAQEAAT8Ay/jr4MD06JpaQ6RtGWrVaW9E05qtIV9h33ORSXFjrjdHUYsjOY/tZlTVsUtnFo0yr7dmPC7pt0RxnSLwza2N6bRTdU/YxT+34LSqvQiJpLRlwZeb1DMUTp8vBkzTx9Cfki6dJbSJ00cX/ZgnnL+DLOOYlLttixSntLbR1H7H1eJeT//EABgRAQADAQAAAAAAAAAAAAAAAAEAEBEg/9oACAECAQE/AOgAjmVrf//EABsRAAICAwEAAAAAAAAAAAAAAAABAhESIDEh/9oACAEDAQE/ANsm5NFS6WOMEvOlFM//2Q==",
+          "contextInfo": {
+            "pairedMediaType": "NOT_PAIRED_MEDIA",
+            "statusSourceType": "IMAGE"
+          },
+          "scansSidecar": "qSTtfAr4LfIKaTFzBvbm3BaP42Uj3eA3IBvFjDjwSc1i0B+4aVTPFw==",
+          "scanLengths": [
+            13696,
+            33343,
+            25349,
+            60814
+          ],
+          "midQualityFileSha256": "i2Fp+c4Adf3FAbk9FdeUHAx2b7kTavXNh80GpYGYEsg="
+        },
+        "messageContextInfo": {
+          "messageSecret": "r9fqm1qzvSCrhSmpjB+X5LwaVdFECGsmzGLSvQ5vPXI="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACC92B7C4AB52EE84DD0F637A2DBBBF1",
+        "participant": "257912937132067@lid",
+        "participantPn": "555191192558@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769216329,
+      "pushName": "LVS Consultoria",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "555184060936-1507731339@g.us",
+          "axolotlSenderKeyDistributionMessage": "MwiDyf9TEDIaIKHNyVmKtWhLHg4jgFeLJD1oF6TbBDA5OV9MWHF7Af+hIiEF5x0agplGQqHZOVIykcLnw2pWWNDg/JAbIYPA2CjdFyc="
+        },
+        "extendedTextMessage": {
+          "text": "Conforme combinado só vou pontuar uns detalhes rápidos até porque o Emerson já explicou bastante",
+          "previewType": "NONE",
+          "contextInfo": {
+            "stanzaId": "3EB065351B85FEC905981A",
+            "participant": "555191192558@s.whatsapp.net",
+            "quotedMessage": {
+              "conversation": "Não esta diferente do que foi apresentado na assembleia da apresentação e decisão sobre a reforma da fachada, se me permitem mais tarde passo um resumo"
+            }
+          },
+          "inviteLinkGroupTypeV2": "DEFAULT"
+        },
+        "messageContextInfo": {
+          "messageSecret": "grXwi46TUqIUFL8QJeL0LJ70d32Lzjp71VKko3hGWo4="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC18FE25785F41D1D416882E6EB8D11A",
+        "participant": "257912937132067@lid",
+        "participantPn": "555191192558@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769216595,
+      "pushName": "LVS Consultoria",
+      "broadcast": false,
+      "message": {
+        "conversation": "A Alianca faz um cálculo conservador visando manter a saúde do caixa do condomínio \nEla sugeriu 27% e nós decidimos em 7% o que cobre os aumento dos custos que já são previstos de fornecedores  praticamente o IPCA de 12 meses. \nOs inadimplentes estão em processo e como o Emerson falou em negociação \nNosso caixa é positivo e já vem assim por muito tempo devido ao controle nos custos, igualmente orçamento domésticos, então pensando assim se não tivéssemos nenhum inadimplente teríamos um aumento em torno dos 7% igual",
+        "messageContextInfo": {
+          "messageSecret": "TQMQOxtUnnObfS7hwmAqGnk3MJFt6dHDUmqHFBS0Pig="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC06C7AD94E3F778AB2AF410411C3238",
+        "participant": "257912937132067@lid",
+        "participantPn": "555191192558@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769216692,
+      "pushName": "LVS Consultoria",
+      "broadcast": false,
+      "message": {
+        "conversation": "O acordo homologado com o morador e parcelado portanto é considerar, o que não foi pago no passado está sendo pago agora.",
+        "messageContextInfo": {
+          "messageSecret": "rR4NqTDCu5LA7w2cgpemBs90dhFXGRpjE3t14OwxDC4="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "3ABF44ED13215A06B92C",
+        "participant": "126615803670777@lid",
+        "participantPn": "555197030294@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769216739,
+      "pushName": "Daniel - Sinal",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "555184060936-1507731339@g.us",
+          "axolotlSenderKeyDistributionMessage": "Mwjf7f/cAhAAGiBHEK/otqkWwKdtEIClXZIY3zXCzELsVCLt31G52irMRSIhBQlONGvvZNXXRal8nSLrebtU+P3moNSqkgIatgwZQdVe"
+        },
+        "extendedTextMessage": {
+          "text": "Isso tem que abrir um chamado",
+          "contextInfo": {
+            "stanzaId": "AC8F698317242D1B10B89AEFCE5DA8CF",
+            "participant": "207726227505328@lid",
+            "quotedMessage": {
+              "imageMessage": {
+                "url": "https://mmg.whatsapp.net/v/t62.7118-24/534204888_1222110426691425_2356577987715817693_n.enc?ccb=11-4&oh=01_Q5Aa3gGoiD3vF4vupP8qqJLId9YABETRYlwXWR7njeTuIqEIsQ&oe=699B92D2&_nc_sid=5e03e0&mms3=true",
+                "mimetype": "image/jpeg",
+                "caption": "Ta estragado?",
+                "fileSha256": "9S/6ZS26zV8CsIpuCYI90cU/NYBvrIxwzBKCM3ydAd0=",
+                "fileLength": "133202",
+                "height": 1600,
+                "width": 900,
+                "mediaKey": "gSJR/fiE7neAn2wtEqiqUfjWLaL+OU/ay7dcvkPC8MU=",
+                "fileEncSha256": "oBwritD3xsiMt4k8+LIqSoeYpXK3R22hPFICq2OWLQw=",
+                "directPath": "/v/t62.7118-24/534204888_1222110426691425_2356577987715817693_n.enc?ccb=11-4&oh=01_Q5Aa3gGoiD3vF4vupP8qqJLId9YABETRYlwXWR7njeTuIqEIsQ&oe=699B92D2&_nc_sid=5e03e0",
+                "mediaKeyTimestamp": "1769216177",
+                "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAD8AIwMBIgACEQEDEQH/xAAvAAADAQEBAQAAAAAAAAAAAAAAAwQFAgEGAQEBAQEAAAAAAAAAAAAAAAAAAQMC/9oADAMBAAIQAxAAAAC7NrzovJ+SkmDUw9358DgGig3sxzdMke9d2ZQ4y1vTWp1PpxMKiAl//8QAJBAAAwACAQMDBQAAAAAAAAAAAAECAxESEyExIlFxFDIzQVL/2gAIAQEAAT8Ay/jr4MD06JpaQ6RtGWrVaW9E05qtIV9h33ORSXFjrjdHUYsjOY/tZlTVsUtnFo0yr7dmPC7pt0RxnSLwza2N6bRTdU/YxT+34LSqvQiJpLRlwZeb1DMUTp8vBkzTx9Cfki6dJbSJ00cX/ZgnnL+DLOOYlLttixSntLbR1H7H1eJeT//EABgRAQADAQAAAAAAAAAAAAAAAAEAEBEg/9oACAECAQE/AOgAjmVrf//EABsRAAICAwEAAAAAAAAAAAAAAAABAhESIDEh/9oACAEDAQE/ANsm5NFS6WOMEvOlFM//2Q==",
+                "contextInfo": {
+                  "disappearingMode": {
+                    "initiator": "CHANGED_IN_CHAT",
+                    "trigger": "CHAT_SETTING",
+                    "initiatedByMe": true
+                  },
+                  "pairedMediaType": "NOT_PAIRED_MEDIA",
+                  "statusSourceType": "IMAGE"
+                },
+                "scansSidecar": "qSTtfAr4LfIKaTFzBvbm3BaP42Uj3eA3IBvFjDjwSc1i0B+4aVTPFw==",
+                "scanLengths": [
+                  13696,
+                  33343,
+                  25349,
+                  60814
+                ],
+                "midQualityFileSha256": "i2Fp+c4Adf3FAbk9FdeUHAx2b7kTavXNh80GpYGYEsg=",
+                "imageSourceType": "USER_IMAGE"
+              }
+            },
+            "disappearingMode": {
+              "initiator": "CHANGED_IN_CHAT",
+              "trigger": "CHAT_SETTING",
+              "initiatedByMe": true
+            }
+          }
+        },
+        "messageContextInfo": {
+          "messageSecret": "Q6HRE63wPhL75pOpE+5Eiwd1v6CiMutuM+7Rbb94FgU="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC2232773B750CB84A35B036E1F27DB7",
+        "participant": "263844186300422@lid",
+        "participantPn": "555181145955@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769216985,
+      "pushName": "Brenda Becker",
+      "broadcast": false,
+      "message": {
+        "conversation": "Boa noite! Alguém abriu chamado?\n\nSe não, eu solicito.",
+        "senderKeyDistributionMessage": {
+          "groupId": "555184060936-1507731339@g.us",
+          "axolotlSenderKeyDistributionMessage": "MwjFirDwARAkGiDDZbTzVY9qjYsxocn5HfmVq4jQAxVjRqfFxl2Ksr0gISIhBahB401z6CU21dKWWr2/jZbJQCBl24yKcNcF04dC97tA"
+        },
+        "messageContextInfo": {
+          "messageSecret": "qJBs6TYusxna8kp9Xd/hVlf0RzeZ52PgtfQdk4lbSaQ="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACB6A3BF4D0B0514A24029DDD38B01E3",
+        "participant": "47717254459496@lid",
+        "participantPn": "555189138014@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769217683,
+      "pushName": "Olivia",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "555184060936-1507731339@g.us",
+          "axolotlSenderKeyDistributionMessage": "Mwil/oX0AhATGiAbdTjF5kk9ql26dmZSKmpiNOpjPOksSWsv2VR6RTT1YiIhBeyY4HJazf78Aw7W2FAfaci5Rozkqasd0PMbENQS2u1/"
+        },
+        "extendedTextMessage": {
+          "text": "Solicita pra nós, por favor. Acho que não abriram.",
+          "previewType": "NONE",
+          "contextInfo": {
+            "stanzaId": "AC2232773B750CB84A35B036E1F27DB7",
+            "participant": "263844186300422@lid",
+            "quotedMessage": {
+              "conversation": "Boa noite! Alguém abriu chamado?\n\nSe não, eu solicito."
+            }
+          },
+          "inviteLinkGroupTypeV2": "DEFAULT"
+        },
+        "messageContextInfo": {
+          "messageSecret": "b3Ba6HtaF2lAQy3oL886LeDDMvJk4zoRIDbL7NbFdDs="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC5C215DCAA3AE95C2396DD4466591E5",
+        "participant": "263844186300422@lid",
+        "participantPn": "555181145955@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769217694,
+      "pushName": "Brenda Becker",
+      "broadcast": false,
+      "message": {
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": false,
+            "id": "ACB6A3BF4D0B0514A24029DDD38B01E3",
+            "participant": "47717254459496@lid"
+          },
+          "text": "👍🏻",
+          "senderTimestampMs": "1769217694108"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB0F39B61C3076656154C"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Posso ajudá-lo a atualizar seus dados. É só pedir!"
+        }
+      },
+      "messageTimestamp": "1769217709",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net",
+      "userReceipt": [
+        {
+          "userJid": "133646564495478@lid",
+          "readTimestamp": "1769217711"
+        }
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACA40EDDB5281211DC6BEA16B8C9B4E8",
+        "participant": "263844186300422@lid",
+        "participantPn": "555181145955@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769217896,
+      "pushName": "Brenda Becker",
+      "broadcast": false,
+      "message": {
+        "extendedTextMessage": {
+          "text": "Chamado registrado com sucesso! Seu protocolo de atendimento é *1320451* e o prazo para atendimento é de *02:30:00*.",
+          "previewType": "NONE",
+          "contextInfo": {
+            "forwardingScore": 1,
+            "isForwarded": true
+          },
+          "inviteLinkGroupTypeV2": "DEFAULT"
+        },
+        "messageContextInfo": {
+          "messageSecret": "uBjIc7QKMoKA/DK6+fWMbIKxOqh3lT3UPGD6B2E+Xtw="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB017099377115EA771DD"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Você deseja atualizar seus dados cadastrais?"
+        }
+      },
+      "messageTimestamp": "1769217912",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net",
+      "userReceipt": [
+        {
+          "userJid": "133646564495478@lid",
+          "readTimestamp": "1769217913"
+        }
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC2A369EA3C4389F219BFC6F0DDAECF1",
+        "participant": "263844186300422@lid",
+        "participantPn": "555181145955@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769217941,
+      "pushName": "Brenda Becker",
+      "broadcast": false,
+      "message": {
+        "conversation": "Fiquem atentos ao técnico",
+        "messageContextInfo": {
+          "messageSecret": "NlGNI5m0yDVuZNkNEQr2Nlh3iIGW0atBLw5nOAAKqfc="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB0164BB613ACD76501C0"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Ok, cancelando a atualização."
+        }
+      },
+      "messageTimestamp": "1769217942",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net",
+      "userReceipt": [
+        {
+          "userJid": "133646564495478@lid",
+          "readTimestamp": "1769217942"
+        }
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC0EC9926D852CBD6A58D29C92515D40",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218669,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "555184060936-1507731339@g.us",
+          "axolotlSenderKeyDistributionMessage": "MwiviYXwBRADGiB7vJEk/ptZjCHIXao99Rzx2RNLqAW0nPSw6PyyGPDpgSIhBYYeieuyP69zDNbWBuZbO9V/0RbNuDmm+iJl6dA4jDpj"
+        },
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0164BB613ACD76501C0"
+          },
+          "type": "REVOKE"
+        },
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC0E7F670AAE03B8A13A2A8998582169",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218669,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0F39B61C3076656154C"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC75441435EDA1E4D0CF6B152FD007B0",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218669,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB017099377115EA771DD"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB06612EE1FD4A2D278D8"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Posso ajudá-lo a atualizar seus dados. É só pedir!"
+        }
+      },
+      "messageTimestamp": "1769218685",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net",
+      "userReceipt": [
+        {
+          "userJid": "133646564495478@lid",
+          "readTimestamp": "1769218686"
+        }
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB0D776EA02DB796B3728"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Posso ajudá-lo a atualizar seus dados. É só pedir!"
+        }
+      },
+      "messageTimestamp": "1769218685",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net"
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB0CA28582F745A2205F1"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Posso ajudá-lo a atualizar seus dados. É só pedir!"
+        }
+      },
+      "messageTimestamp": "1769218685",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net"
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACCE6306B16AC2E8F6EC5710A5C9A531",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218702,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0CA28582F745A2205F1"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACD5AA538BF78CEA1E49F3AFEF6A152C",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218703,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0D776EA02DB796B3728"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC9F1A5A466B63E97B5587A7969F28BA",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218703,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB06612EE1FD4A2D278D8"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC1A05310CC3872BA8CCEF0846C75C2A",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218709,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0D776EA02DB796B3728"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACCD59CC7BE596185AE4F8A2F05897DF",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218720,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0D776EA02DB796B3728"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB08610E5AD4B38BD1ACF"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Você deseja atualizar seus dados cadastrais?"
+        }
+      },
+      "messageTimestamp": "1769218725",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net",
+      "userReceipt": [
+        {
+          "userJid": "133646564495478@lid",
+          "readTimestamp": "1769218725"
+        }
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB0E7EF8BDCB4D4ABD7DD"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Você deseja atualizar seus dados cadastrais?"
+        }
+      },
+      "messageTimestamp": "1769218737",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net",
+      "userReceipt": [
+        {
+          "userJid": "133646564495478@lid",
+          "readTimestamp": "1769218738"
+        }
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": true,
+        "id": "3EB0BE8621BAF5342DD9BF"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Você deseja atualizar seus dados cadastrais?"
+        }
+      },
+      "messageTimestamp": "1769218738",
+      "status": "PENDING",
+      "participant": "555199801001:18@s.whatsapp.net"
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC2EE38EEF3E93C19D8AC044BF155059",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218743,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB08610E5AD4B38BD1ACF"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACCE153354D14AD46208DAF6E6B2AF29",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218744,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0BE8621BAF5342DD9BF"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACE44857B6A74BF79282A78C99983E55",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218744,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0CC70E55068540F01F1"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC5F08B3F94AA8BB8BD7D0746646CE21",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769218744,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0E7EF8BDCB4D4ABD7DD"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC89970C7DEC45A825CCF92C18E70AB6",
+        "participant": "207726227505328@lid",
+        "participantPn": "555191053552@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769219961,
+      "pushName": "Lisi",
+      "broadcast": false,
+      "message": {
+        "extendedTextMessage": {
+          "text": "Como q se abre? Vi q a vizinha disse q já abriu, mas só pra saber.. se um dia eu precisar abrir tbm..",
+          "previewType": "NONE",
+          "contextInfo": {
+            "stanzaId": "3ABF44ED13215A06B92C",
+            "participant": "126615803670777@lid",
+            "quotedMessage": {
+              "conversation": "Isso tem que abrir um chamado"
+            }
+          },
+          "inviteLinkGroupTypeV2": "DEFAULT"
+        },
+        "messageContextInfo": {
+          "messageSecret": "HvvmcC6syZolnXWFUxWYFhoo/kwmomB6HBMM0IEInek="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACB1D9C00620ABDED319011A34AC9F61",
+        "participant": "47717254459496@lid",
+        "participantPn": "555189138014@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769220636,
+      "pushName": "Olivia",
+      "broadcast": false,
+      "message": {
+        "contactMessage": {
+          "displayName": "TK Elevator",
+          "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:Elevator;TK;;;\nFN:TK Elevator\nORG:TK Elevator\nTITLE:\nitem1.TEL;waid=555199779006:+55 51 9977-9006\nitem1.X-ABLabel:Celular\nX-WA-BIZ-DESCRIPTION:Conheça o mundo inovador da TK Elevator e compre elevadores, escadas rolantes ou soluções de acessibilidade com serviço especializado.\nX-WA-BIZ-NAME:TK Elevator\nEND:VCARD",
+          "contextInfo": {
+            "stanzaId": "AC89970C7DEC45A825CCF92C18E70AB6",
+            "participant": "207726227505328@lid",
+            "quotedMessage": {
+              "conversation": "Como q se abre? Vi q a vizinha disse q já abriu, mas só pra saber.. se um dia eu precisar abrir tbm.."
+            }
+          }
+        },
+        "messageContextInfo": {
+          "messageSecret": "y3ukCKBDS7wgzrRz1WeyU/bxmqWTGqWsG3Gq0MxOzI0="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC70B43CB3EAD5404D7DA9DCD887EEF3",
+        "participant": "47717254459496@lid",
+        "participantPn": "555189138014@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769220655,
+      "pushName": "Olivia",
+      "broadcast": false,
+      "message": {
+        "extendedTextMessage": {
+          "text": "Mandando mensagem por esse WhatsApp que encaminhei no grupo.",
+          "previewType": "NONE",
+          "contextInfo": {
+            "stanzaId": "AC89970C7DEC45A825CCF92C18E70AB6",
+            "participant": "207726227505328@lid",
+            "quotedMessage": {
+              "conversation": "Como q se abre? Vi q a vizinha disse q já abriu, mas só pra saber.. se um dia eu precisar abrir tbm.."
+            }
+          },
+          "inviteLinkGroupTypeV2": "DEFAULT"
+        },
+        "messageContextInfo": {
+          "messageSecret": "PrB/CCnAn9zQECawiAfSglAKr7Ki0q3HwmCg9FmnSY0="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC6D005EBD9C91E5C4F9762FCEB5C852",
+        "participant": "47717254459496@lid",
+        "participantPn": "555189138014@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769220688,
+      "pushName": "Olivia",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "AC70B43CB3EAD5404D7DA9DCD887EEF3"
+          },
+          "type": "MESSAGE_EDIT",
+          "editedMessage": {
+            "extendedTextMessage": {
+              "text": "Mandando mensagem por esse WhatsApp que encaminhei no grupo. O CNPJ está na descrição do grupo, caso solicitem.",
+              "previewType": "NONE",
+              "contextInfo": {
+                "stanzaId": "AC89970C7DEC45A825CCF92C18E70AB6",
+                "participant": "207726227505328@lid",
+                "quotedMessage": {
+                  "conversation": "Como q se abre? Vi q a vizinha disse q já abriu, mas só pra saber.. se um dia eu precisar abrir tbm.."
+                }
+              },
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            }
+          },
+          "timestampMs": "1769220687892"
+        },
+        "messageContextInfo": {
+          "messageSecret": "PrB/CCnAn9zQECawiAfSglAKr7Ki0q3HwmCg9FmnSY0="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACB3194B96390F65FD2F45212E0A06BA",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769220722,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0D776EA02DB796B3728"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC6F165598D361B6A1EBC1B49EB371CE",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769220722,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0CA28582F745A2205F1"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "ACF1F8036B18EF562ADC4F117AFB6022",
+        "participant": "133646564495478@lid"
+      },
+      "messageTimestamp": 1769220934,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "message": {
+        "protocolMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": true,
+            "id": "3EB0D776EA02DB796B3728"
+          },
+          "type": "REVOKE"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC8B58A8FEED272A7B49617490F59399",
+        "participant": "207726227505328@lid",
+        "participantPn": "555191053552@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769220970,
+      "pushName": "Lisi",
+      "broadcast": false,
+      "message": {
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": false,
+            "id": "AC70B43CB3EAD5404D7DA9DCD887EEF3",
+            "participant": "47717254459496@lid"
+          },
+          "text": "❤️",
+          "senderTimestampMs": "1769220970179"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "AC1286BCC102F5ED3C3331404060895A",
+        "participant": "207726227505328@lid",
+        "participantPn": "555191053552@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769220972,
+      "pushName": "Lisi",
+      "broadcast": false,
+      "message": {
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": false,
+            "id": "ACB1D9C00620ABDED319011A34AC9F61",
+            "participant": "47717254459496@lid"
+          },
+          "text": "❤️",
+          "senderTimestampMs": "1769220972634"
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555184060936-1507731339@g.us",
+        "fromMe": false,
+        "id": "3AE5E369B7AC08E70CA5",
+        "participant": "217119304212488@lid",
+        "participantPn": "555184000840@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769221014,
+      "pushName": "Emerson",
+      "broadcast": false,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "555184060936-1507731339@g.us",
+          "axolotlSenderKeyDistributionMessage": "Mwjs/871BhAAGiATvz4VZadMV4P9gtI8kvHPPltLbY4kDF4pI52X+HDIaCIhBXmGz79vBlDV+OG4M+LE/QdOszioSqqUB1XdvgU5eppF"
+        },
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderTimestamp": "1769135683",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769218682"
+          },
+          "deviceListMetadataVersion": 2
+        },
+        "reactionMessage": {
+          "key": {
+            "remoteJid": "555184060936-1507731339@g.us",
+            "fromMe": false,
+            "id": "AC06C7AD94E3F778AB2AF410411C3238",
+            "participant": "257912937132067@lid"
+          },
+          "text": "👍",
+          "senderTimestampMs": "1769221014118"
+        }
+      }
+    }
+  ],
+  "555196669136@s.whatsapp.net": [
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3A4D2734484770AEDE1D",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1769218683,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "messageStubType": 2,
+      "messageStubParameters": [
+        "Message absent from node"
+      ]
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB0A1917C2602DDC9D7E2"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Posso ajudá-lo a atualizar seus dados. É só pedir!"
+        }
+      },
+      "messageTimestamp": "1769218693",
+      "status": "PENDING"
+    }
+  ],
+  "status@broadcast": [
+    {
+      "key": {
+        "remoteJid": "status@broadcast",
+        "fromMe": false,
+        "id": "AC57B2DFF8E1DBF012731516A2E8C0D7",
+        "participant": "555193317580@s.whatsapp.net",
+        "participantLid": "261207193813246@lid"
+      },
+      "messageTimestamp": 1769219000,
+      "pushName": "Slvnpaty 💋",
+      "broadcast": true,
+      "message": {
+        "senderKeyDistributionMessage": {
+          "groupId": "status@broadcast",
+          "axolotlSenderKeyDistributionMessage": "Mwjioa6DBhAAGiCNQ0OdDQ1IrMLLdUI4mJ0xP7E1flpJQNyF/nhMCsKU8yIhBcP55IbT1z0VxkXMWrFz5k/+vFu8OHKH/49IuWAS9rNn"
+        },
+        "videoMessage": {
+          "url": "https://mmg.whatsapp.net/v/t62.7161-24/534417834_2021881855262066_6910335267634903230_n.enc?ccb=11-4&oh=01_Q5Aa3gFoppHaMfCtx7g9fFH0Ng88QHAEMo-7v7p1QQz4BHqOUQ&oe=699B8D8F&_nc_sid=5e03e0&mms3=true",
+          "mimetype": "video/mp4",
+          "fileSha256": "NZzJnvJrWrk9NRndRvyMowIh/XCqP37XXLG2YcRf3Mc=",
+          "fileLength": "3114196",
+          "seconds": 74,
+          "mediaKey": "GYF5mpGT/FdhYCYWOK1/yu1sq6WCQgcAOTJPohqDtXs=",
+          "height": 1024,
+          "width": 576,
+          "fileEncSha256": "3lMj1qgS+ljmzPIIKsUH92iK3m9hgSbebInzQPB4dJc=",
+          "directPath": "/v/t62.7161-24/534417834_2021881855262066_6910335267634903230_n.enc?ccb=11-4&oh=01_Q5Aa3gFoppHaMfCtx7g9fFH0Ng88QHAEMo-7v7p1QQz4BHqOUQ&oe=699B8D8F&_nc_sid=5e03e0",
+          "mediaKeyTimestamp": "1769218992",
+          "jpegThumbnail": "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",
+          "contextInfo": {
+            "pairedMediaType": "NOT_PAIRED_MEDIA",
+            "statusSourceType": "VIDEO"
+          },
+          "streamingSidecar": "fydWaUmhzV+Gj59g30lx/sxcXYRzGULZfe83PujI28O4nihon8NW2QwxbscSNHBxjeQxXfnygFafpbctHU3uMqPct7/1SzKGDojqMLcoCBXA7suPT9wtGq5Twrtg2Y63jAh9dopC96bYUsXJp17zy16J3wJyYvIBPDO5AMGDJxyJ7AxucDdgm+ALcDOEw/y9jXKcNCH7GxokCcVqvTcAihgRkNDm/iDcAFUHQk6ruhi1b4dvNmMtJgXcCSwVVWApStzyt29mksSzaJbc6acKjRDniayzdNCnozDZ5cJwzLLPbUpBNzoChgbZgJfj1kZ+hWaaNNPW6XKjGuOXAkQnXyD6HU5xNd1jF4KJJBdlhe2nCLY7awY3ZN1nAnaE6yOhEB4G/Z8ynfv18Nerb7t1R4aCEDxqx/mYb9Os8OrUULCnEJYZ4P29Z0ZeTsZxdyRrxFXiPFbhieDNADoAqkD6WiO8X0IRYztoVvSa3brV3LY7MIYf/Sg8M+Gpeh7Msy9JFJ/Q9HztSlA4ywaaS2Y48Fa4oG664TrB+aEUaNz/zEZdPFY96YloMFXw9DRG3EJiAF++bNDQ+maOzhkEGLgxW1LnRyzewTq5mgKWgxSweZBXvkJzG0KOTHOeP8wKwcUe",
+          "thumbnailDirectPath": "/v/t62.36147-24/564392884_1516258653469744_5304132667142877282_n.enc?ccb=11-4&oh=01_Q5Aa3gGQslHpOswxYVf62-m9TtJGEvp5iDwysnsb7QIiSrf6xg&oe=699BA8B0&_nc_sid=5e03e0",
+          "thumbnailSha256": "XJCm1K67ESbw1e+GH4KxXhAUWh681AV2x8ri+HDRjcU=",
+          "thumbnailEncSha256": "1WjUiwEGWEG6ZCauRkmLxhAmM4Yu6QTZ10z3TTyXXj8=",
+          "externalShareFullVideoDurationInSeconds": 0
+        },
+        "messageContextInfo": {
+          "messageSecret": "SH2F/hYlVfgaavUt3CCmvUaUABmz2bbVbLIzZXAS/s4="
+        }
+      }
+    }
+  ],
+  "161855859380461@lid": [
+    {
+      "key": {
+        "remoteJid": "161855859380461@lid",
+        "fromMe": true,
+        "id": "AC043CE5A8CF144752B51525180C81E0"
+      },
+      "messageTimestamp": 1769219041,
+      "pushName": "Augusto Das Neves👾🤖",
+      "broadcast": false,
+      "status": 3,
+      "message": {
+        "audioMessage": {
+          "url": "https://mmg.whatsapp.net/v/t62.7117-24/533484975_1249695363886543_4433866071365886141_n.enc?ccb=11-4&oh=01_Q5Aa3gF69SpynjqfaAUwxWFFBylfhCnXEEs_DyLRUVvh7nlnMg&oe=699BA829&_nc_sid=5e03e0&mms3=true",
+          "mimetype": "audio/ogg; codecs=opus",
+          "fileSha256": "ZY896tAQZC/GHF1kFijar84nxyigv2r4SywL1Mfx1PA=",
+          "fileLength": "409460",
+          "seconds": 188,
+          "ptt": true,
+          "mediaKey": "D/ihJlwJBhNvLUcS6oMVfYhxEYrSQqaG4Ad+O25dTag=",
+          "fileEncSha256": "N17JDAoyy1neN0NaDwKjXEZHPTQcgn2WnRSPiQdmnIs=",
+          "directPath": "/v/t62.7117-24/533484975_1249695363886543_4433866071365886141_n.enc?ccb=11-4&oh=01_Q5Aa3gF69SpynjqfaAUwxWFFBylfhCnXEEs_DyLRUVvh7nlnMg&oe=699BA829&_nc_sid=5e03e0",
+          "mediaKeyTimestamp": "1769218854",
+          "waveform": "AEUAACsAOwAfAFUANThFQQBLTFA3QQBFNx1BNwhCM0Y0PEQ2SzImADoAQ0g0FAAUADovIzsZLksABgMSAABKAA=="
+        }
+      }
+    }
+  ],
+  "555197658006@s.whatsapp.net": [
+    {
+      "key": {
+        "remoteJid": "555197658006@s.whatsapp.net",
+        "fromMe": true,
+        "id": "AC5177616F480718D7732D1A4B4A138C"
+      },
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "messageSecret": "t9iia1OxsmpOZLBUQwQadyDV/tkCfgDY2973FA0gFcg="
+        }
+      },
+      "messageTimestamp": "1769220142",
+      "status": "DELIVERY_ACK",
+      "userReceipt": [
+        {
+          "userJid": "555197658006@s.whatsapp.net",
+          "receiptTimestamp": "1769220142",
+          "readTimestamp": "0",
+          "playedTimestamp": "0"
+        }
+      ],
+      "messageSecret": "t9iia1OxsmpOZLBUQwQadyDV/tkCfgDY2973FA0gFcg=",
+      "originalSelfAuthorUserJidString": "555199801001@s.whatsapp.net",
+      "isMentionedInStatus": false
+    }
+  ]
+}

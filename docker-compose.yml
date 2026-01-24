@@ -104,6 +104,7 @@ services:
       - ServiceBus__ConnectionString=Endpoint=sb://servicebus-emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
       - LLM__BaseUrl=http://ollama:11434
       - WhatsAppProxy__BaseUrl=http://whatsapp-proxy-api:8080
+      - UserAccountApi__BaseUrl=http://user-account-api:8080
     ports:
       - "8081:8080"
     depends_on:
@@ -112,6 +113,7 @@ services:
       - servicebus-emulator
       - ollama
       - whatsapp-proxy-api
+      - user-account-api
     networks:
       - app-network
 
@@ -126,6 +128,7 @@ services:
       - "3000:3000"
     volumes:
       - baileys_auth:/app/auth_info
+      - ./src/BaileysWhatsAppService/baileys_store.json:/app/baileys_store.json
     networks:
       - app-network
 

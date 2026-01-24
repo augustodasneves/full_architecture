@@ -12,4 +12,11 @@ public class ConversationState
     public Dictionary<string, string> CollectedData { get; set; } = new();
     public Dictionary<string, int> ValidationRetries { get; set; } = new();
     public int RetryCount { get; set; } = 0;
+    public FlowType Type { get; set; } = FlowType.Registration;
+}
+
+public enum FlowType
+{
+    Registration,
+    Update
 }

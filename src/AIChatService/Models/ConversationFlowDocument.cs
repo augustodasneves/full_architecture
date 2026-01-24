@@ -6,7 +6,8 @@ namespace AIChatService.Models;
 public class ConversationFlowDocument
 {
     [BsonId]
-    public string Id { get; set; } = string.Empty;
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? Id { get; set; }
     
     // ID único deste fluxo de atendimento
     public string FlowId { get; set; } = string.Empty;

@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using UserAccountApi.Data;
+using UserAccountApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,17 +8,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Register Infrastructure and Application Services
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-// if (app.Environment.IsDevelopment())
-// {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-// }
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Ensure DB is created for demo
 using (var scope = app.Services.CreateScope())
@@ -28,7 +25,6 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

@@ -1,8 +1,61 @@
-const { default: makeWASocket, DisconnectReason, useMultiFileAuthState, fetchLatestBaileysVersion } = require('@whiskeysockets/baileys');
+const { default: makeWASocket, DisconnectReason, useMultiFileAuthState, fetchLatestBaileysVersion, isJidGroup } = require('@whiskeysockets/baileys');
 const express = require('express');
 const qrcode = require('qrcode-terminal');
 const pino = require('pino');
 const axios = require('axios');
+const fs = require('fs');
+
+// Custom Store Implementation
+function makeInMemoryStore({ logger }) {
+    const chats = {};
+    const messages = {};
+
+    function bind(ev) {
+        ev.on('messages.upsert', ({ messages: newMessages, type }) => {
+            if (type !== 'notify' && type !== 'append') return;
+
+            for (const msg of newMessages) {
+                const jid = msg.key.remoteJid;
+                if (!messages[jid]) messages[jid] = [];
+
+                // Avoid duplicates
+                if (!messages[jid].find(m => m.key.id === msg.key.id)) {
+                    messages[jid].push(msg);
+                    // Limit to last 50 messages per chat to save memory
+                    if (messages[jid].length > 50) messages[jid].shift();
+                }
+            }
+        });
+    }
+
+    async function loadMessage(jid, id) {
+        if (messages[jid]) {
+            return messages[jid].find(m => m.key.id === id);
+        }
+        return undefined;
+    }
+
+    function writeToFile(path) {
+        try {
+            fs.writeFileSync(path, JSON.stringify(messages, null, 2));
+        } catch (error) {
+            if (logger) logger.error('Error writing store to file:', error);
+        }
+    }
+
+    function readFromFile(path) {
+        try {
+            if (fs.existsSync(path)) {
+                const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+                Object.assign(messages, data);
+            }
+        } catch (error) {
+            if (logger) logger.error('Error reading store from file:', error);
+        }
+    }
+
+    return { bind, loadMessage, writeToFile, readFromFile };
+}
 
 const app = express();
 app.use(express.json());
@@ -23,6 +76,15 @@ let isConnecting = false;
 // Store received messages for webhook forwarding
 const messageQueue = [];
 
+// Persistent store setup
+const store = makeInMemoryStore({ logger });
+const STORE_FILE = './baileys_store.json';
+store.readFromFile(STORE_FILE);
+// Save store every 10 seconds
+setInterval(() => {
+    store.writeToFile(STORE_FILE);
+}, 10_000);
+
 // Function to forward messages to AIChatService webhook
 async function forwardToWebhook(messageData) {
     try {
@@ -32,7 +94,7 @@ async function forwardToWebhook(messageData) {
                 changes: [{
                     value: {
                         messages: [{
-                            from: messageData.from.replace('@s.whatsapp.net', ''),
+                            from: messageData.from,
                             text: {
                                 body: messageData.message
                             },
@@ -74,11 +136,26 @@ async function connectToWhatsApp() {
 
         sock = makeWASocket({
             version,
-            logger: pino({ level: 'silent' }),
+            logger: pino({ level: 'info' }),
             printQRInTerminal: true,
             auth: state,
-            browser: ['Baileys WhatsApp Service', 'Chrome', '1.0.0']
+            browser: ['Baileys WhatsApp Service', 'Chrome', '1.0.0'],
+            // Improved configuration for stability and retries
+            connectTimeoutMs: 60000,
+            defaultQueryTimeoutMs: 0,
+            keepAliveIntervalMs: 10000,
+            emitOwnEvents: true,
+            getMessage: async (key) => {
+                if (store) {
+                    const msg = await store.loadMessage(key.remoteJid, key.id);
+                    return msg?.message || undefined;
+                }
+                return undefined;
+            }
         });
+
+        // Bind store to socket events
+        store.bind(sock.ev);
 
         // Connection update handler
         sock.ev.on('connection.update', async (update) => {
@@ -110,6 +187,10 @@ async function connectToWhatsApp() {
                 connectionState = 'connecting';
                 logger.info('Connecting to WhatsApp...');
             }
+
+            if (update.receivedPendingNotifications) {
+                logger.info('Received all pending notifications');
+            }
         });
 
         // Credentials update handler
@@ -117,9 +198,17 @@ async function connectToWhatsApp() {
 
         // Message handler
         sock.ev.on('messages.upsert', async ({ messages, type }) => {
+            // DEBUG: Log every incoming event
+            logger.info({ msg: 'DEBUG: messages.upsert received', type, count: messages.length, raw: messages });
+
             if (type === 'notify') {
                 for (const msg of messages) {
-                    if (!msg.key.fromMe && msg.message) {
+                    const jid = msg.key.remoteJid;
+                    const isGroup = isJidGroup(jid);
+                    const isStatus = jid === 'status@broadcast' || jid.endsWith('@broadcast');
+                    const isNewsletter = jid.endsWith('@newsletter');
+
+                    if (!msg.key.fromMe && msg.message && !isGroup && !isStatus && !isNewsletter) {
                         const messageData = {
                             id: msg.key.id,
                             from: msg.key.remoteJid,
@@ -209,7 +298,7 @@ app.post('/send', async (req, res) => {
             });
         }
 
-        // Format phone number (ensure it has @s.whatsapp.net suffix)
+        // Format phone number (ensure it has @s.whatsapp.net suffix if none present)
         const formattedNumber = to.includes('@') ? to : `${to}@s.whatsapp.net`;
 
         const result = await sock.sendMessage(formattedNumber, {

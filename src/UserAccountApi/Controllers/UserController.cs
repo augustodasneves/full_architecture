@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Shared.DTOs;
-using UserAccountApi.Data;
-using UserAccountApi.Domain;
+using UserAccountApi.Services;
 
 namespace UserAccountApi.Controllers;
 
@@ -10,113 +8,48 @@ namespace UserAccountApi.Controllers;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly IUserService _userService;
+    private readonly ILogger<UserController> _logger;
 
-    public UserController(AppDbContext context)
+    public UserController(IUserService userService, ILogger<UserController> logger)
     {
-        _context = context;
+        _userService = userService;
+        _logger = logger;
     }
 
     [HttpPost("register")]
     public async Task<ActionResult<UserProfileDto>> RegisterUser([FromBody] CreateUserDto dto)
     {
-        // Validate if user already exists by phone number
-        var existingUser = await _context.Users
-            .FirstOrDefaultAsync(u => u.ContactInfo.PhoneNumber == dto.PhoneNumber);
+        var result = await _userService.RegisterUserAsync(dto);
         
-        if (existingUser != null)
+        if (!result.Success)
         {
-            return Conflict(new { message = "Usuário com este número de telefone já existe." });
+            return Conflict(new { message = result.Message });
         }
 
-        // Validate if CPF already exists
-        if (!string.IsNullOrEmpty(dto.Cpf))
-        {
-            var existingCpf = await _context.Users
-                .FirstOrDefaultAsync(u => u.Cpf == dto.Cpf);
-            
-            if (existingCpf != null)
-            {
-                return Conflict(new { message = "Usuário com este CPF já existe." });
-            }
-        }
-
-        // Create new user
-        var newUser = new User
-        {
-            Id = Guid.NewGuid(),
-            Name = dto.Name,
-            Cpf = dto.Cpf,
-            ContactInfo = new ContactInfo
-            {
-                PhoneNumber = dto.PhoneNumber,
-                Email = dto.Email
-            },
-            Address = new Address
-            {
-                Street = dto.Street,
-                City = dto.City,
-                State = dto.State,
-                ZipCode = dto.ZipCode
-            }
-        };
-
-        _context.Users.Add(newUser);
-        await _context.SaveChangesAsync();
-
-        var response = new UserProfileDto
-        {
-            Id = newUser.Id,
-            Name = newUser.Name,
-            Cpf = newUser.Cpf,
-            PhoneNumber = newUser.ContactInfo.PhoneNumber,
-            Email = newUser.ContactInfo.Email,
-            Address = $"{newUser.Address.Street}, {newUser.Address.City} - {newUser.Address.State}"
-        };
-
-        return CreatedAtAction(nameof(GetProfile), new { phoneNumber = newUser.ContactInfo.PhoneNumber }, response);
+        return CreatedAtAction(
+            nameof(GetProfile), 
+            new { phoneNumber = result.Profile!.PhoneNumber }, 
+            result.Profile);
     }
 
     [HttpGet("me/{phoneNumber}")]
     public async Task<ActionResult<UserProfileDto>> GetProfile(string phoneNumber)
     {
-        var user = await _context.Users.FirstOrDefaultAsync(u => u.ContactInfo.PhoneNumber == phoneNumber);
-        if (user == null) return NotFound();
-
-        return new UserProfileDto
+        var profile = await _userService.GetProfileByPhoneNumberAsync(phoneNumber);
+        
+        if (profile == null)
         {
-            Id = user.Id,
-            Name = user.Name,
-            Cpf = user.Cpf,
-            PhoneNumber = user.ContactInfo.PhoneNumber,
-            Email = user.ContactInfo.Email,
-            Address = $"{user.Address.Street}, {user.Address.City} - {user.Address.State}"
-        };
+            return NotFound();
+        }
+
+        return Ok(profile);
     }
 
     [HttpPut("update")]
     public async Task<IActionResult> UpdateProfile([FromBody] UserProfileDto dto)
     {
-        var user = await _context.Users.FirstOrDefaultAsync(u => u.ContactInfo.PhoneNumber == dto.PhoneNumber);
-        if (user == null)
-        {
-            // Create new user for demo purposes if not exists
-            user = new User
-            {
-                Id = Guid.NewGuid(),
-                ContactInfo = new ContactInfo { PhoneNumber = dto.PhoneNumber }
-            };
-            _context.Users.Add(user);
-        }
-
-        user.Name = dto.Name;
-        user.ContactInfo.Email = dto.Email;
-        // Simple address parsing for demo
-        var addressParts = dto.Address.Split(',');
-        if (addressParts.Length > 0) user.Address.Street = addressParts[0].Trim();
-        if (addressParts.Length > 1) user.Address.City = addressParts[1].Trim();
-
-        await _context.SaveChangesAsync();
+        await _userService.UpdateProfileAsync(dto);
         return Ok();
     }
 }

@@ -67,6 +67,13 @@ public class WhatsAppController : ControllerBase
                             string from = fromElement.GetString() ?? "";
                             string text = bodyElement.GetString() ?? "";
 
+                            // Ignore messages from groups, broadcasts or newsletters
+                            if (from.EndsWith("@g.us") || from.EndsWith("@broadcast") || from.EndsWith("@newsletter"))
+                            {
+                                _logger.LogInformation("Ignoring message from non-personal JID: {From}", from);
+                                return Ok();
+                            }
+
                             await _flowEngine.ProcessMessageAsync(from, text);
                         }
                     }
