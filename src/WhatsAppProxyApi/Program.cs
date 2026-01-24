@@ -2,10 +2,12 @@ using WhatsAppProxyApi.Models;
 using WhatsAppProxyApi.Services;
 using WhatsAppProxyApi.Clients;
 using Polly;
+using Shared.Telemetry;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCustomTelemetry(builder.Configuration, "WhatsAppProxyApi");
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -18,13 +20,9 @@ builder.Services.Configure<WhatsAppSettings>(
 builder.Services.AddHttpClient<IBaileysClient, BaileysClient>()
     .AddStandardResilienceHandler(options =>
     {
-        // Customizing Retry: 3 attempts with exponential backoff
         options.Retry.MaxRetryAttempts = 3;
         options.Retry.BackoffType = DelayBackoffType.Exponential;
         options.Retry.Delay = TimeSpan.FromSeconds(2);
-
-        // Customizing Circuit Breaker: 
-        // If 50% of requests fail in a 30s window, open the circuit for 30s.
         options.CircuitBreaker.FailureRatio = 0.5;
         options.CircuitBreaker.SamplingDuration = TimeSpan.FromSeconds(30);
         options.CircuitBreaker.MinimumThroughput = 10;
@@ -33,7 +31,20 @@ builder.Services.AddHttpClient<IBaileysClient, BaileysClient>()
 
 builder.Services.AddScoped<IWhatsAppService, BaileysWhatsAppService>();
 
+// Configure Health Checks
+builder.Services.AddHealthChecks()
+    .AddUrlGroup(new Uri($"{builder.Configuration["WhatsApp:BaileysServiceUrl"]}/status"), name: "baileys-service");
+
 var app = builder.Build();
+
+// Configure Health Check endpoint
+app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{
+    ResponseWriter = HealthChecks.UI.Client.UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+app.UseMiddleware<CorrelationIdMiddleware>();
+app.UseOpenTelemetryPrometheusScrapingEndpoint();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -19,6 +19,11 @@ public static class DependencyInjection
         // Services
         services.AddScoped<IUserService, UserService>();
 
+        // Health Checks
+        services.AddHealthChecks()
+            .AddNpgSql(configuration.GetConnectionString("DefaultConnection")!, name: "postgres")
+            .AddRedis(configuration["Redis"] ?? "localhost:6379", name: "redis");
+
         return services;
     }
 }
