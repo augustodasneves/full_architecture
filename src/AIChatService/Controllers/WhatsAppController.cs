@@ -9,12 +9,12 @@ namespace AIChatService.Controllers;
 [AllowAnonymous]
 public class WhatsAppController : ControllerBase
 {
-    private readonly FlowEngine _flowEngine;
+    private readonly Azure.Messaging.ServiceBus.ServiceBusClient _serviceBusClient;
     private readonly ILogger<WhatsAppController> _logger;
 
-    public WhatsAppController(FlowEngine flowEngine, ILogger<WhatsAppController> logger)
+    public WhatsAppController(Azure.Messaging.ServiceBus.ServiceBusClient serviceBusClient, ILogger<WhatsAppController> logger)
     {
-        _flowEngine = flowEngine;
+        _serviceBusClient = serviceBusClient;
         _logger = logger;
     }
 
@@ -23,66 +23,48 @@ public class WhatsAppController : ControllerBase
                                        [FromQuery(Name = "hub.verify_token")] string token,
                                        [FromQuery(Name = "hub.challenge")] string challenge)
     {
-        // In a real app, validate the token against configuration
         if (mode == "subscribe" && token == "mytesttoken")
         {
-            return Ok(int.Parse(challenge));
+            return Ok(challenge);
         }
         return Forbid();
     }
 
     [HttpPost("webhook")]
-    public async Task<IActionResult> ReceiveMessage([FromBody] System.Text.Json.JsonElement payload)
+    public async Task<IActionResult> ReceiveMessage([FromBody] Shared.DTOs.WhatsAppWebhookDto payload)
     {
-        _logger.LogInformation("Received webhook: {Payload}", payload.ToString());
-
-        // Simplified parsing for demo - assumes text message structure
         try
         {
-            // Navigate JSON to find message body and from number
-            // This is highly dependent on Meta's API structure
-            if (payload.TryGetProperty("entry", out var entryArray) && 
-                entryArray.ValueKind == System.Text.Json.JsonValueKind.Array &&
-                entryArray.GetArrayLength() > 0)
+            var message = payload.Entry?.FirstOrDefault()?.Changes?.FirstOrDefault()?.Value?.Messages?.FirstOrDefault();
+            
+            if (message != null && !string.IsNullOrEmpty(message.From) && message.Text != null)
             {
-                var entry = entryArray[0];
-                
-                if (entry.TryGetProperty("changes", out var changesArray) &&
-                    changesArray.ValueKind == System.Text.Json.JsonValueKind.Array &&
-                    changesArray.GetArrayLength() > 0)
+                string from = message.From;
+                string text = message.Text.Body;
+
+                if (from.EndsWith("@g.us") || from.EndsWith("@broadcast") || from.EndsWith("@newsletter"))
                 {
-                    var changes = changesArray[0];
-                    
-                    if (changes.TryGetProperty("value", out var value) &&
-                        value.TryGetProperty("messages", out var messagesArray) &&
-                        messagesArray.ValueKind == System.Text.Json.JsonValueKind.Array &&
-                        messagesArray.GetArrayLength() > 0)
-                    {
-                        var message = messagesArray[0];
-                        
-                        if (message.TryGetProperty("from", out var fromElement) &&
-                            message.TryGetProperty("text", out var textElement) &&
-                            textElement.TryGetProperty("body", out var bodyElement))
-                        {
-                            string from = fromElement.GetString() ?? "";
-                            string text = bodyElement.GetString() ?? "";
-
-                            // Ignore messages from groups, broadcasts or newsletters
-                            if (from.EndsWith("@g.us") || from.EndsWith("@broadcast") || from.EndsWith("@newsletter"))
-                            {
-                                _logger.LogInformation("Ignoring message from non-personal JID: {From}", from);
-                                return Ok();
-                            }
-
-                            await _flowEngine.ProcessMessageAsync(from, text);
-                        }
-                    }
+                    return Ok();
                 }
+
+                _logger.LogInformation("Enqueuing message from {From} to Service Bus", from);
+
+                var sender = _serviceBusClient.CreateSender("whatsapp-messages");
+                var eventData = new Shared.Events.WhatsAppMessageReceivedEvent
+                {
+                    From = from,
+                    Content = text
+                };
+                
+                var json = System.Text.Json.JsonSerializer.Serialize(eventData);
+                var busMessage = new Azure.Messaging.ServiceBus.ServiceBusMessage(json);
+                
+                await sender.SendMessageAsync(busMessage);
             }
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error processing webhook");
+            _logger.LogError(ex, "Error enqueuing message to Service Bus");
         }
 
         return Ok();

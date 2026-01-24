@@ -4,6 +4,7 @@ using AIChatService.Validators;
 using Azure.Messaging.ServiceBus;
 using MongoDB.Driver;
 using Shared.Interfaces;
+using AIChatService.Intents;
 using StackExchange.Redis;
 
 namespace AIChatService.Extensions;
@@ -12,6 +13,8 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddAutoMapper(typeof(DependencyInjection));
+
         // Redis
         services.AddSingleton<IConnectionMultiplexer>(sp =>
             ConnectionMultiplexer.Connect(configuration.GetConnectionString("Redis") ?? "localhost"));
@@ -34,12 +37,24 @@ public static class DependencyInjection
         {
             var whatsappProxyUrl = configuration["WhatsAppProxy:BaseUrl"] ?? "http://whatsapp-proxy-api:8080";
             client.BaseAddress = new Uri(whatsappProxyUrl);
+        }).AddStandardResilienceHandler(options =>
+        {
+            options.Retry.MaxRetryAttempts = 3;
+            options.Retry.Delay = TimeSpan.FromSeconds(2);
+            options.CircuitBreaker.FailureRatio = 0.5;
+            options.CircuitBreaker.BreakDuration = TimeSpan.FromSeconds(30);
         });
 
         services.AddHttpClient<IUserAccountService, UserAccountHttpService>(client =>
         {
             var userAccountUrl = configuration["UserAccountApi:BaseUrl"] ?? "http://user-account-api:8080";
             client.BaseAddress = new Uri(userAccountUrl);
+        }).AddStandardResilienceHandler(options =>
+        {
+            options.Retry.MaxRetryAttempts = 2;
+            options.Retry.Delay = TimeSpan.FromSeconds(1);
+            options.CircuitBreaker.FailureRatio = 0.5;
+            options.CircuitBreaker.BreakDuration = TimeSpan.FromSeconds(15);
         });
 
         // Validators
@@ -63,6 +78,13 @@ public static class DependencyInjection
         services.AddScoped<IFlowStateHandler, CollectingEmailStateHandler>();
         services.AddScoped<IFlowStateHandler, CollectingAddressStateHandler>();
         services.AddScoped<IFlowStateHandler, ConfirmingDataStateHandler>();
+
+        // Intent Strategies
+        services.AddScoped<IIntentStrategy, UpdateRegistrationStrategy>();
+        services.AddScoped<IIntentStrategy, OtherIntentStrategy>();
+
+        // Background Consumers
+        services.AddHostedService<WhatsAppMessageConsumer>();
 
         return services;
     }

@@ -1,6 +1,8 @@
 using AIChatService.Models;
 using Shared.Interfaces;
 using AIChatService.Services;
+using AIChatService.Intents;
+using Shared.DTOs;
 
 namespace AIChatService.Flow;
 
@@ -8,17 +10,20 @@ public class IdleStateHandler : FlowStateHandlerBase
 {
     private readonly IUserAccountService _userAccountService;
     private readonly ILLMService _llmService;
+    private readonly IEnumerable<IIntentStrategy> _intentStrategies;
 
     public IdleStateHandler(
         IWhatsAppService whatsAppService,
         ConversationService conversationService,
         IUserAccountService userAccountService,
         ILLMService llmService,
+        IEnumerable<IIntentStrategy> intentStrategies,
         ILogger<IdleStateHandler> logger) 
         : base(whatsAppService, conversationService, logger)
     {
         _userAccountService = userAccountService;
         _llmService = llmService;
+        _intentStrategies = intentStrategies;
     }
 
     public override string StateName => "Idle";
@@ -26,26 +31,11 @@ public class IdleStateHandler : FlowStateHandlerBase
     public override async Task HandleAsync(ConversationState state, string text)
     {
         var userProfile = await _userAccountService.GetUserProfileByWhatsAppIdAsync(state.PhoneNumber);
+        var intentName = await _llmService.IdentifyIntentAsync(text);
         
-        if (userProfile != null)
-        {
-            var intent = await _llmService.IdentifyIntentAsync(text);
-            if (intent.Contains("UPDATE_REGISTRATION"))
-            {
-                state.Type = FlowType.Update;
-                state.CurrentStep = "CollectingName";
-                await SendAndLogMessageAsync(state, $"Olá, {userProfile.Name}! 👋\n\nQue bom falar com você novamente. Para atualizar seus dados, primeiro vamos confirmar seu nome completo.");
-            }
-            else
-            {
-                await SendAndLogMessageAsync(state, $"Olá, {userProfile.Name}! 👋\n\nSou seu assistente virtual. Como posso ajudar hoje? Se precisar atualizar seu endereço, telefone ou e-mail, é só me avisar!");
-            }
-        }
-        else
-        {
-            state.Type = FlowType.Registration;
-            state.CurrentStep = "CollectingName";
-            await SendAndLogMessageAsync(state, "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu nome completo.");
-        }
+        var strategy = _intentStrategies.FirstOrDefault(s => s.IntentName == intentName) 
+                       ?? _intentStrategies.First(s => s.IntentName == "OTHER");
+
+        await strategy.ExecuteAsync(state, userProfile, text);
     }
 }
