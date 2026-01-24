@@ -14,12 +14,18 @@ public class WhatsAppController : ControllerBase
 {
     private readonly IWhatsAppService _whatsAppService;
     private readonly WhatsAppSettings _settings;
+    private readonly WhatsAppProxyApi.Security.WhatsAppSignatureValidator _signatureValidator;
     private readonly ILogger<WhatsAppController> _logger;
 
-    public WhatsAppController(IWhatsAppService whatsAppService, IOptions<WhatsAppSettings> settings, ILogger<WhatsAppController> logger)
+    public WhatsAppController(
+        IWhatsAppService whatsAppService, 
+        IOptions<WhatsAppSettings> settings, 
+        WhatsAppProxyApi.Security.WhatsAppSignatureValidator signatureValidator,
+        ILogger<WhatsAppController> logger)
     {
         _whatsAppService = whatsAppService;
         _settings = settings.Value;
+        _signatureValidator = signatureValidator;
         _logger = logger;
     }
 
@@ -40,9 +46,14 @@ public class WhatsAppController : ControllerBase
     }
 
     [HttpPost("webhook")]
-    public IActionResult ReceiveWebhook([FromBody] object payload)
+    public async Task<IActionResult> ReceiveWebhook([FromBody] WhatsAppWebhookDto payload)
     {
-        _logger.LogInformation("Received webhook payload: {Payload}", payload);
+        if (!await _signatureValidator.IsValid(Request))
+        {
+            return Unauthorized("Invalid signature");
+        }
+
+        _logger.LogInformation("Received verified webhook payload.");
         return Ok();
     }
 

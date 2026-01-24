@@ -89,7 +89,7 @@ public static class DependencyInjection
         // Health Checks
         services.AddHealthChecks()
             .AddRedis(configuration.GetConnectionString("Redis") ?? "localhost", name: "redis")
-            .AddMongoDb(configuration["MongoDB:ConnectionString"]!, name: "mongodb")
+            .AddMongoDb(sp => sp.GetRequiredService<IMongoClient>(), name: "mongodb")
             .AddAzureServiceBusQueue(configuration["ServiceBus:ConnectionString"]!, "whatsapp-messages", name: "servicebus");
 
         return services;

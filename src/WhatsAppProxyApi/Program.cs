@@ -30,6 +30,7 @@ builder.Services.AddHttpClient<IBaileysClient, BaileysClient>()
     });
 
 builder.Services.AddScoped<IWhatsAppService, BaileysWhatsAppService>();
+builder.Services.AddScoped<WhatsAppProxyApi.Security.WhatsAppSignatureValidator>();
 
 // Configure Health Checks
 builder.Services.AddHealthChecks()
