@@ -342,82 +342,6 @@
       "key": {
         "remoteJid": "216947488772305@lid",
         "fromMe": false,
-        "id": "AC3705F5CDC059B9C5B4ACA51B252FE8",
-        "senderPn": "555197658006@s.whatsapp.net"
-      },
-      "messageTimestamp": 1769227062,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "message": {
-        "conversation": "Oi",
-        "messageContextInfo": {
-          "deviceListMetadata": {
-            "senderKeyHash": "NRajQi9SRtHq0A==",
-            "senderTimestamp": "1769017585",
-            "recipientKeyHash": "QqtQFxwCqlhj4g==",
-            "recipientTimestamp": "1769214839"
-          },
-          "deviceListMetadataVersion": 2,
-          "messageSecret": "Y2mPn9br2GTYe9FIByqqZvj6xsk+DQXsCTmXQY2Ptc8="
-        }
-      }
-    },
-    {
-      "key": {
-        "remoteJid": "216947488772305@lid",
-        "fromMe": true,
-        "id": "3EB03FB7126801453A4B82"
-      },
-      "message": {
-        "extendedTextMessage": {
-          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 1"
-        }
-      },
-      "messageTimestamp": "1769227062",
-      "status": "PENDING"
-    },
-    {
-      "key": {
-        "remoteJid": "216947488772305@lid",
-        "fromMe": false,
-        "id": "ACD8F6D7D87FE2EDB370EEE451F16402",
-        "senderPn": "555197658006@s.whatsapp.net"
-      },
-      "messageTimestamp": 1769227063,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "message": {
-        "conversation": "Oi",
-        "messageContextInfo": {
-          "deviceListMetadata": {
-            "senderKeyHash": "NRajQi9SRtHq0A==",
-            "senderTimestamp": "1769017585",
-            "recipientKeyHash": "QqtQFxwCqlhj4g==",
-            "recipientTimestamp": "1769214839"
-          },
-          "deviceListMetadataVersion": 2,
-          "messageSecret": "TG8CjCZvuIwQYpdzqR39/+/N69gRS2p1UA57vxFDX90="
-        }
-      }
-    },
-    {
-      "key": {
-        "remoteJid": "216947488772305@lid",
-        "fromMe": true,
-        "id": "3EB046A4A87DF4DE2F99FF"
-      },
-      "message": {
-        "extendedTextMessage": {
-          "text": "❌ Muitas tentativas inválidas. O processo de cadastro foi cancelado. Você pode começar novamente quando quiser."
-        }
-      },
-      "messageTimestamp": "1769227064",
-      "status": "SERVER_ACK"
-    },
-    {
-      "key": {
-        "remoteJid": "216947488772305@lid",
-        "fromMe": false,
         "id": "AC7DA4A04544872F0CA5682C82DDE4CB",
         "senderPn": "555197658006@s.whatsapp.net"
       },
@@ -1286,6 +1210,82 @@
         }
       },
       "messageTimestamp": "1769227761",
+      "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACC3EC62C7F75FF37D01A9F02E58E769",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769228006,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "MhtwVY7DqXmwHiETeWX4LHbUHNooEMnUQEjJ8oVZ1ig="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": false,
+        "id": "ACF00460BA6FFC8CB52C46EFF70DA14E",
+        "senderPn": "555197658006@s.whatsapp.net"
+      },
+      "messageTimestamp": 1769228020,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "NRajQi9SRtHq0A==",
+            "senderTimestamp": "1769017585",
+            "recipientKeyHash": "QqtQFxwCqlhj4g==",
+            "recipientTimestamp": "1769214839"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "aRjK9WYeO17rSO8+Lz33HRrcMqYJMLmz02YhLYRI0GA="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB073D5CEEDF8827CB494"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá, Updated User! 👋\n\nSou seu assistente virtual. Como posso ajudar hoje? Se precisar atualizar seu endereço, telefone ou e-mail, é só me avisar!"
+        }
+      },
+      "messageTimestamp": "1769228109",
+      "status": "DELIVERY_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "216947488772305@lid",
+        "fromMe": true,
+        "id": "3EB0E59232084A7A3C898F"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá, Updated User! 👋\n\nQue bom falar com você novamente. Para atualizar seus dados, primeiro vamos confirmar seu nome completo."
+        }
+      },
+      "messageTimestamp": "1769228115",
       "status": "PENDING"
     }
   ],

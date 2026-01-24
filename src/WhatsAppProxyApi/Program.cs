@@ -1,5 +1,6 @@
 using WhatsAppProxyApi.Models;
 using WhatsAppProxyApi.Services;
+using WhatsAppProxyApi.Clients;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +13,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<WhatsAppSettings>(
     builder.Configuration.GetSection("WhatsApp"));
 
-// Register HttpClient for BaileysWhatsAppService
-builder.Services.AddHttpClient<BaileysWhatsAppService>();
+// Register WhatsApp Services
+builder.Services.AddHttpClient<IBaileysClient, BaileysClient>();
+builder.Services.AddScoped<IWhatsAppService, BaileysWhatsAppService>();
 
 var app = builder.Build();
 

@@ -12,11 +12,11 @@ namespace WhatsAppProxyApi.Controllers;
 [AllowAnonymous]
 public class WhatsAppController : ControllerBase
 {
-    private readonly BaileysWhatsAppService _whatsAppService;
+    private readonly IWhatsAppService _whatsAppService;
     private readonly WhatsAppSettings _settings;
     private readonly ILogger<WhatsAppController> _logger;
 
-    public WhatsAppController(BaileysWhatsAppService whatsAppService, IOptions<WhatsAppSettings> settings, ILogger<WhatsAppController> logger)
+    public WhatsAppController(IWhatsAppService whatsAppService, IOptions<WhatsAppSettings> settings, ILogger<WhatsAppController> logger)
     {
         _whatsAppService = whatsAppService;
         _settings = settings.Value;
