@@ -46,6 +46,19 @@ public class UserController : ControllerBase
         return Ok(profile);
     }
 
+    [HttpGet("wa/{whatsappId}")]
+    public async Task<ActionResult<UserProfileDto>> GetProfileByWhatsAppId(string whatsappId)
+    {
+        var profile = await _userService.GetProfileByWhatsAppIdAsync(whatsappId);
+        
+        if (profile == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(profile);
+    }
+
     [HttpPut("update")]
     public async Task<IActionResult> UpdateProfile([FromBody] UserProfileDto dto)
     {

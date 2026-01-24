@@ -19,6 +19,12 @@ public class UserRepository : IUserRepository
             .FirstOrDefaultAsync(u => u.ContactInfo.PhoneNumber == phoneNumber);
     }
 
+    public async Task<User?> GetByWhatsAppIdAsync(string whatsappId)
+    {
+        return await _context.Users
+            .FirstOrDefaultAsync(u => u.ContactInfo.WhatsAppId == whatsappId);
+    }
+
     public async Task<User?> GetByCpfAsync(string cpf)
     {
         return await _context.Users

@@ -55,6 +55,7 @@ public class CollectingAddressStateHandler : FlowStateHandlerBase
         var title = state.Type == FlowType.Registration ? "confirme seus dados de cadastro" : "confirme seus novos dados";
         
         await SendAndLogMessageAsync(state, $"✅ Endereço salvo com sucesso!\n\nPor favor, {title}:\n\n" +
+                     $"👤 Nome: {state.CollectedData["NewName"]}\n" +
                      $"📱 Telefone: {state.CollectedData["NewPhoneNumber"]}\n" +
                      $"📧 Email: {state.CollectedData["NewEmail"]}\n" +
                      $"🏠 Endereço: {state.CollectedData["NewAddress"]}\n\n" +

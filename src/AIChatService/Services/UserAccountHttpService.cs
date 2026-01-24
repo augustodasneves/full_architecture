@@ -19,16 +19,28 @@ public class UserAccountHttpService : IUserAccountService
     {
         try
         {
+            // 1. Try search by full WhatsApp JID first (more reliable)
+            var waUrl = $"/api/User/wa/{phoneNumber}";
+            _logger.LogInformation("Checking user existence by WA ID. Calling: {Url}", waUrl);
+            var waResponse = await _httpClient.GetAsync(waUrl);
+            
+            if (waResponse.StatusCode == HttpStatusCode.OK)
+            {
+                _logger.LogInformation("User found by WhatsApp ID: {WhatsAppId}", phoneNumber);
+                return true;
+            }
+
+            // 2. Fallback to cleaned phone number search
             var cleanNumber = ExtractNumber(phoneNumber);
-            var url = $"/api/User/me/{cleanNumber}";
+            var phoneUrl = $"/api/User/me/{cleanNumber}";
             
-            _logger.LogInformation("Checking user existence. Original: {Raw}, Extracted: {Clean}. Calling: {Url}", 
-                phoneNumber, cleanNumber, url);
+            _logger.LogInformation("User not found by JID. Trying cleaned phone number: {Clean}. Calling: {Url}", 
+                cleanNumber, phoneUrl);
                 
-            var response = await _httpClient.GetAsync(url);
-            _logger.LogInformation("User check response for {Target}: {Status}", cleanNumber, response.StatusCode);
+            var phoneResponse = await _httpClient.GetAsync(phoneUrl);
+            _logger.LogInformation("User check response for {Target}: {Status}", cleanNumber, phoneResponse.StatusCode);
             
-            return response.StatusCode == HttpStatusCode.OK;
+            return phoneResponse.StatusCode == HttpStatusCode.OK;
         }
         catch (Exception ex)
         {
@@ -41,22 +53,36 @@ public class UserAccountHttpService : IUserAccountService
     {
         try
         {
-            var cleanNumber = ExtractNumber(phoneNumber);
-            var url = $"/api/User/me/{cleanNumber}";
+            // 1. Try search by full WhatsApp JID first
+            var waUrl = $"/api/User/wa/{phoneNumber}";
+            _logger.LogInformation("Fetching profile by WA ID. Calling: {Url}", waUrl);
+            var waResponse = await _httpClient.GetAsync(waUrl);
             
-            _logger.LogInformation("Fetching user profile. Original: {Raw}, Extracted: {Clean}", 
-                phoneNumber, cleanNumber);
-                
-            var response = await _httpClient.GetAsync(url);
-            if (response.StatusCode == HttpStatusCode.OK)
+            if (waResponse.StatusCode == HttpStatusCode.OK)
             {
-                var content = await response.Content.ReadAsStringAsync();
+                var content = await waResponse.Content.ReadAsStringAsync();
                 var profile = JsonConvert.DeserializeObject<Shared.DTOs.UserProfileDto>(content);
-                _logger.LogInformation("Profile found for {Clean}: {Name}", cleanNumber, profile?.Name);
+                _logger.LogInformation("Profile found by WhatsApp ID {Raw}: {Name}", phoneNumber, profile?.Name);
+                return profile;
+            }
+
+            // 2. Fallback to cleaned phone number search
+            var cleanNumber = ExtractNumber(phoneNumber);
+            var phoneUrl = $"/api/User/me/{cleanNumber}";
+            
+            _logger.LogInformation("Profile not found by JID. Trying cleaned phone number: {Clean}. Calling: {Url}", 
+                cleanNumber, phoneUrl);
+                
+            var phoneResponse = await _httpClient.GetAsync(phoneUrl);
+            if (phoneResponse.StatusCode == HttpStatusCode.OK)
+            {
+                var content = await phoneResponse.Content.ReadAsStringAsync();
+                var profile = JsonConvert.DeserializeObject<Shared.DTOs.UserProfileDto>(content);
+                _logger.LogInformation("Profile found by phone {Clean}: {Name}", cleanNumber, profile?.Name);
                 return profile;
             }
             
-            _logger.LogInformation("No profile found for {Clean} (Status: {Status})", cleanNumber, response.StatusCode);
+            _logger.LogInformation("No profile found for {Raw} or {Clean}", phoneNumber, cleanNumber);
             return null;
         }
         catch (Exception ex)
@@ -74,5 +100,31 @@ public class UserAccountHttpService : IUserAccountService
         // Ex: 555198801001@s.whatsapp.net -> 555198801001
         // Ex: 216947488772305@lid -> 216947488772305
         return jid.Split('@')[0];
+    }
+
+    public async Task<Shared.DTOs.UserProfileDto?> GetUserProfileByWhatsAppIdAsync(string whatsappId)
+    {
+        try
+        {
+            var waUrl = $"/api/User/wa/{whatsappId}";
+            _logger.LogInformation("Explicitly fetching profile by WA ID. Calling: {Url}", waUrl);
+            var waResponse = await _httpClient.GetAsync(waUrl);
+            
+            if (waResponse.StatusCode == HttpStatusCode.OK)
+            {
+                var content = await waResponse.Content.ReadAsStringAsync();
+                var profile = JsonConvert.DeserializeObject<Shared.DTOs.UserProfileDto>(content);
+                _logger.LogInformation("Profile found for WA ID {Raw}: {Name}", whatsappId, profile?.Name);
+                return profile;
+            }
+
+            _logger.LogInformation("No profile found for WA ID {Raw}", whatsappId);
+            return null;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting user profile by WA ID: {WhatsAppId}", whatsappId);
+            return null;
+        }
     }
 }

@@ -55,7 +55,8 @@ public class Worker : BackgroundService
                     PhoneNumber = updateEvent.NewPhoneNumber,
                     Email = updateEvent.NewEmail,
                     Address = updateEvent.NewAddress,
-                    Name = "Updated User" // In real app, might need to fetch existing name or allow update
+                    WhatsAppId = updateEvent.WhatsAppId,
+                    Name = updateEvent.NewName
                 };
 
                 var json = JsonConvert.SerializeObject(dto);

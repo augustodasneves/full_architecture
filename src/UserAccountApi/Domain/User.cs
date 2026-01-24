@@ -13,6 +13,7 @@ public class ContactInfo
 {
     public string PhoneNumber { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
+    public string WhatsAppId { get; set; } = string.Empty;
 }
 
 public class Address

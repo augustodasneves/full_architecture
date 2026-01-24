@@ -25,7 +25,7 @@ public class IdleStateHandler : FlowStateHandlerBase
 
     public override async Task HandleAsync(ConversationState state, string text)
     {
-        var userProfile = await _userAccountService.GetUserProfileAsync(state.PhoneNumber);
+        var userProfile = await _userAccountService.GetUserProfileByWhatsAppIdAsync(state.PhoneNumber);
         
         if (userProfile != null)
         {
@@ -33,8 +33,8 @@ public class IdleStateHandler : FlowStateHandlerBase
             if (intent.Contains("UPDATE_REGISTRATION"))
             {
                 state.Type = FlowType.Update;
-                state.CurrentStep = "ConfirmingUpdate";
-                await SendAndLogMessageAsync(state, $"Olá, {userProfile.Name}! 👋\n\nQue bom falar com você novamente. Gostaria de atualizar seus dados cadastrais?");
+                state.CurrentStep = "CollectingName";
+                await SendAndLogMessageAsync(state, $"Olá, {userProfile.Name}! 👋\n\nQue bom falar com você novamente. Para atualizar seus dados, primeiro vamos confirmar seu nome completo.");
             }
             else
             {
@@ -44,8 +44,8 @@ public class IdleStateHandler : FlowStateHandlerBase
         else
         {
             state.Type = FlowType.Registration;
-            state.CurrentStep = "CollectingPhone";
-            await SendAndLogMessageAsync(state, "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu número de telefone (com DDD).");
+            state.CurrentStep = "CollectingName";
+            await SendAndLogMessageAsync(state, "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu nome completo.");
         }
     }
 }

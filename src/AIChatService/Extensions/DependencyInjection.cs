@@ -58,6 +58,7 @@ public static class DependencyInjection
         // Flow State Handlers (State Pattern)
         services.AddScoped<IFlowStateHandler, IdleStateHandler>();
         services.AddScoped<IFlowStateHandler, ConfirmingUpdateStateHandler>();
+        services.AddScoped<IFlowStateHandler, CollectingNameStateHandler>();
         services.AddScoped<IFlowStateHandler, CollectingPhoneStateHandler>();
         services.AddScoped<IFlowStateHandler, CollectingEmailStateHandler>();
         services.AddScoped<IFlowStateHandler, CollectingAddressStateHandler>();

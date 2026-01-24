@@ -30,9 +30,11 @@ public class ConfirmingDataStateHandler : FlowStateHandlerBase
             var updateEvent = new UserUpdateRequestedEvent
             {
                 UserId = Guid.Empty,
+                NewName = state.CollectedData["NewName"],
                 NewPhoneNumber = state.CollectedData["NewPhoneNumber"],
                 NewEmail = state.CollectedData["NewEmail"],
-                NewAddress = state.CollectedData["NewAddress"]
+                NewAddress = state.CollectedData["NewAddress"],
+                WhatsAppId = state.PhoneNumber // state.PhoneNumber is actually the JID
             };
 
             var message = new ServiceBusMessage(JsonConvert.SerializeObject(updateEvent));
@@ -43,14 +45,14 @@ public class ConfirmingDataStateHandler : FlowStateHandlerBase
             
             var successMessage = state.Type == FlowType.Registration 
                 ? "✅ Cadastro realizado com sucesso! Bem-vindo ao nosso sistema."
-                : "✅ Solicitação de atualização enviada com sucesso! Seus dados serão atualizados em breve.";
+                : "✅ Solicitação de atualização enviada com sucesso! Seu cadastro será atualizado em breve.";
                 
             await SendAndLogMessageAsync(state, successMessage);
         }
         else
         {
-            state.CurrentStep = "CollectingPhone";
-            await SendAndLogMessageAsync(state, "Vamos começar novamente. Por favor, digite seu novo número de telefone.");
+            state.CurrentStep = "CollectingName";
+            await SendAndLogMessageAsync(state, "Vamos começar novamente. Por favor, digite seu nome completo.");
         }
     }
 }
