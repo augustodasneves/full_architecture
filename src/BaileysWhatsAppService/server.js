@@ -90,18 +90,27 @@ async function forwardToWebhook(messageData) {
     try {
         // Format in Meta API compatible structure
         const payload = {
+            object: 'whatsapp_business_account',
             entry: [{
+                id: 'unknown',
                 changes: [{
                     value: {
+                        messaging_product: 'whatsapp',
+                        metadata: {
+                            display_phone_number: 'unknown',
+                            phone_number_id: 'unknown'
+                        },
                         messages: [{
                             from: messageData.from,
                             text: {
                                 body: messageData.message
                             },
                             id: messageData.id,
-                            timestamp: messageData.timestamp
+                            timestamp: String(messageData.timestamp),
+                            type: 'text'
                         }]
-                    }
+                    },
+                    field: 'messages'
                 }]
             }]
         };
