@@ -23,7 +23,18 @@ public class OtherIntentStrategy : IIntentStrategy
         string message;
         if (userProfile != null)
         {
-            message = $"Olá, {userProfile.Name}! 👋\n\nSou seu assistente virtual. Como posso ajudar hoje? Se precisar atualizar seu endereço, telefone ou e-mail, é só me avisar!";
+            if (text.Contains("iniciar", StringComparison.OrdinalIgnoreCase) || 
+                text.Contains("começar", StringComparison.OrdinalIgnoreCase) ||
+                text.Contains("start", StringComparison.OrdinalIgnoreCase))
+            {
+                state.Type = FlowType.Update;
+                state.CurrentStep = "CollectingName";
+                message = $"Olá, {userProfile.Name}! 👋\n\nQue bom falar com você novamente. Para atualizar seus dados, primeiro vamos confirmar seu nome completo.";
+            }
+            else
+            {
+                message = $"Olá, {userProfile.Name}! 👋\n\nSou seu assistente virtual. Como posso ajudar hoje? Se precisar atualizar seu endereço, telefone ou e-mail, é só me avisar!";
+            }
         }
         else
         {

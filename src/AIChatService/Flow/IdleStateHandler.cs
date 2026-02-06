@@ -33,7 +33,7 @@ public class IdleStateHandler : FlowStateHandlerBase
         var userProfile = await _userAccountService.GetUserProfileByWhatsAppIdAsync(state.PhoneNumber);
         var intentName = await _llmService.IdentifyIntentAsync(text);
         
-        var strategy = _intentStrategies.FirstOrDefault(s => s.IntentName == intentName) 
+        var strategy = _intentStrategies.FirstOrDefault(s => s.IntentName.Equals(intentName, StringComparison.OrdinalIgnoreCase)) 
                        ?? _intentStrategies.First(s => s.IntentName == "OTHER");
 
         await strategy.ExecuteAsync(state, userProfile, text);
