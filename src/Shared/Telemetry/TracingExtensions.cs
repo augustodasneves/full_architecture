@@ -23,10 +23,23 @@ public static class TracingExtensions
                     options.Endpoint = new Uri(configuration["OpenTelemetry:OtlpEndpoint"] ?? "http://jaeger:4317");
                 }))
             .WithMetrics(metrics => metrics
+                .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName))
+                .AddMeter("OpenTelemetry.Instrumentation.AspNetCore")
+                .AddMeter("OpenTelemetry.Instrumentation.Http")
+                .AddMeter("OpenTelemetry.Instrumentation.Runtime")
+                .AddMeter("OpenTelemetry.Instrumentation.Process")
                 .AddAspNetCoreInstrumentation()
                 .AddHttpClientInstrumentation()
                 .AddRuntimeInstrumentation()
                 .AddProcessInstrumentation()
+                // Map OTel metric names to what the legacy dashboard expects (different variants)
+                .AddView("process.memory.usage", "process_private_memory_bytes")
+                .AddView("process.memory.virtual", "process_virtual_memory_bytes")
+                .AddView("process.cpu.time", "process_cpu_seconds_total")
+                .AddView("process.cpu.user.time", "process_cpu_seconds_total")
+                .AddView("process.cpu.system.time", "process_cpu_seconds_total")
+                .AddView("dotnet.cpu.time", "process_cpu_seconds_total")
+                .AddView("process.runtime.dotnet.memory.usage", "process_private_memory_bytes") // Fallback
                 .AddPrometheusExporter());
 
         return services;
