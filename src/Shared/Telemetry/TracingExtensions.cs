@@ -32,14 +32,11 @@ public static class TracingExtensions
                 .AddHttpClientInstrumentation()
                 .AddRuntimeInstrumentation()
                 .AddProcessInstrumentation()
-                // Map OTel metric names to what the legacy dashboard expects (different variants)
+                // Map OTel metric names to what the legacy dashboard expects
+                // Prometheus exporter appends unit and _total, so we use base names here
                 .AddView("process.memory.usage", "process_private_memory_bytes")
                 .AddView("process.memory.virtual", "process_virtual_memory_bytes")
-                .AddView("process.cpu.time", "process_cpu_seconds_total")
-                .AddView("process.cpu.user.time", "process_cpu_seconds_total")
-                .AddView("process.cpu.system.time", "process_cpu_seconds_total")
-                .AddView("dotnet.cpu.time", "process_cpu_seconds_total")
-                .AddView("process.runtime.dotnet.memory.usage", "process_private_memory_bytes") // Fallback
+                .AddView("process.cpu.time", "process_cpu")
                 .AddPrometheusExporter());
 
         return services;

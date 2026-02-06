@@ -1,403 +1,168 @@
 # WhatsApp Registration System
 
-Sistema de registro e atualização de dados de usuários via WhatsApp, construído com arquitetura de microserviços usando .NET 8 e containerizado com Docker.
+Sistema inteligente de registro e atualização de dados de usuários via WhatsApp, construído com arquitetura de microserviços moderna usando **.NET 9** e **Node.js**, totalmente containerizado e monitorado.
 
 ## 📋 Visão Geral
 
-Este projeto implementa um sistema inteligente de atendimento ao cliente que permite aos usuários registrar e atualizar suas informações pessoais (PII - Personally Identifiable Information) através de conversas via WhatsApp. O sistema utiliza um modelo de linguagem local (LLM) para processar interações naturais e uma arquitetura baseada em eventos para garantir escalabilidade e resiliência.
+Este projeto implementa um sistema de atendimento automatizado que permite aos usuários registrar e atualizar suas informações pessoais (PII) através de linguagem natural no WhatsApp. O sistema utiliza modelos de IA locais para processamento e uma infraestrutura robusta de observabilidade.
 
 ### Fluxo Principal
 
-1. **Usuário** envia mensagem via WhatsApp
-2. **WhatsApp Proxy API** recebe o webhook e encaminha para o AI Chat Service
-3. **AI Chat Service** processa a mensagem usando:
-   - LLM (Ollama) para entender a intenção do usuário
-   - Redis para manter estado da conversa
-   - Validadores para garantir qualidade dos dados
-4. **Event Bus** (Azure Service Bus) comunica eventos entre serviços
-5. **PII Update Worker** consome eventos e atualiza dados via User Account API
-6. **User Account API** persiste dados no PostgreSQL
+1.  **Usuário** envia mensagem via WhatsApp.
+2.  **Baileys WhatsApp Service** (Node.js) ou **Proxy API** (.NET) recebe a mensagem.
+3.  **AI Chat Service** (.NET 9) processa a interação:
+    -   Identifica intenções usando **LLM (Ollama/Phi3)**.
+    -   Mantém o estado da conversa no **Redis**.
+    -   Valida dados coletados (Email, Telefone, Endereço).
+4.  **Event Bus** (Azure Service Bus) propaga eventos de atualização.
+5.  **PII Update Worker** consome os eventos e sincroniza com a **User Account API**.
+6.  **User Account API** persiste os dados no **PostgreSQL**.
 
-## 🏗️ Arquitetura
+---
 
+## 🏗️ Arquitetura do Sistema
+
+```mermaid
+graph TD
+    User([Usuário]) <--> WA[WhatsApp App]
+    
+    subgraph "Infraestrutura Docker"
+        subgraph "Ingress & Gateway"
+            Baileys[Baileys WA Service :3000]
+            Proxy[WA Proxy API :8082]
+        end
+
+        subgraph "Core Services"
+            Chat[AI Chat Service :8081]
+            Worker[PII Update Worker]
+            Account[User Account API :8080]
+        end
+
+        subgraph "Data & AI"
+            Redis[(Redis :6379)]
+            Ollama[Ollama :11434]
+            SB[Service Bus Emulator]
+            PG[(PostgreSQL :5432)]
+        end
+
+        subgraph "Observability Stack"
+            Jaeger[Jaeger :16686]
+            Prom[Prometheus :9090]
+            Grafana[Grafana :3001]
+        end
+    end
+
+    WA <--> Baileys
+    Baileys <--> Chat
+    Proxy <--> Chat
+    Chat <--> Redis
+    Chat <--> Ollama
+    Chat -- Publish --> SB
+    SB -- Subscribe --> Worker
+    Worker -- Call --> Account
+    Account <--> PG
+    
+    %% Telemetry flows
+    Chat & Account & Worker & Baileys -- Traces/Metrics --> Jaeger
+    Chat & Account & Worker & Baileys -- Scraping --> Prom
+    Prom -- Data Source --> Grafana
 ```
-┌─────────────────┐
-│   WhatsApp      │
-│   Business API  │
-└────────┬────────┘
-         │ Webhook
-         ▼
-┌──────────────────────────────────────────────────────────────┐
-│                    Docker Network                            │
-│                                                              │
-│  ┌──────────────────┐      ┌────────────────┐                │
-│  │ WhatsApp Proxy   │──────│  AI Chat       │                │
-│  │ API :8082        │      │  Service :8081 │                │
-│  └──────────────────┘      └───────┬────────┘                │
-│                                     │                        │
-│                                     ├───► Redis :6379        │
-│                                     │                        │
-│                                     ├───► Ollama :11434      |
-│                                     │    (LLM - phi3)        │
-│                                     │                        │
-│                                     ▼                        │
-│                         ┌──────────────────────┐             │
-│                         │  Service Bus         │             │
-│                         │  Emulator :5672      │             │
-│                         └──────────┬───────────┘             │
-│                                    │                         │
-│                                    ▼                         │
-│                         ┌──────────────────────┐             │
-│                         │  PII Update Worker   │             │
-│                         └──────────┬───────────┘             │
-│                                    │                         │
-│                                    ▼                         │
-│                         ┌──────────────────────┐             │
-│                         │  User Account API    │             │
-│                         │  :8080               │             │
-│                         └──────────┬───────────┘             │
-│                                    │                         │
-│                                    ▼                         │
-│                         ┌──────────────────────┐             │
-│                         │  PostgreSQL :5432    │             │
-│                         └──────────────────────┘             │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
-```
+
+---
 
 ## 🚀 Tecnologias Utilizadas
 
-### Backend
-- **.NET 8** - Framework principal
-- **C#** - Linguagem de programação
-- **ASP.NET Core Web API** - APIs RESTful
+### Backend & Core
+-   **.NET 9** - Plataforma principal para serviços de alta performance.
+-   **Node.js** - Utilizado no `BaileysWhatsAppService` para integração de baixo nível com WhatsApp.
+-   **C# / JavaScript** - Linguagens utilizadas.
+-   **Entity Framework Core** - ORM para PostgreSQL.
 
-### Banco de Dados
-- **PostgreSQL 15** - Banco de dados relacional (dados de usuários)
-- **Redis** - Cache em memória (estado de conversação)
-- **Entity Framework Core** - ORM
+### Dados & Mensageria
+-   **PostgreSQL 15** - Armazenamento persistente de usuários.
+-   **Redis** - Cache de alta velocidade para estado de sessão (State Machine).
+-   **Azure Service Bus Emulator** - Broker de mensagens para desacoplamento de serviços.
 
-### Mensageria
-- **Azure Service Bus Emulator** - Comunicação assíncrona entre serviços
+### Inteligência Artificial
+-   **Ollama** - Runtime para execução de LLMs locais.
+-   **Phi3** - Modelo de linguagem leve e eficiente para classificação de intenções.
 
-### IA & Machine Learning
-- **Ollama** - Servidor LLM local
-- **Phi3** - Modelo de linguagem para processamento de linguagem natural
+### 📊 Observabilidade (Full Stack)
+-   **OpenTelemetry** - Padrão utilizado para instrumentação de logs, métricas e traces.
+-   **Jaeger** - Visualização de Distributed Tracing (rastreamento fim-a-fim de mensagens).
+-   **Prometheus** - Coleta e armazenamento de métricas de performance (CPU, Memória, Requests).
+-   **Grafana** - Dashboards interativos para monitoramento do sistema.
 
-### Infraestrutura
-- **Docker** & **Docker Compose** - Containerização e orquestração
-- **Azure SQL Edge** - Dependência do Service Bus Emulator
-
-### Integrações
-- **Meta WhatsApp Business API** - Comunicação com usuários via WhatsApp
+---
 
 ## 📁 Estrutura do Projeto
 
-```
+```text
 full_architecture/
 ├── src/
-│   ├── AIChatService/              # Serviço de chat com IA
-│   │   ├── Controllers/            # Endpoints da API
-│   │   ├── Services/               # Lógica de negócio (FlowEngine, LLM)
-│   │   ├── Validators/             # Validação de dados (email, telefone, endereço)
-│   │   └── Program.cs
-│   │
-│   ├── WhatsAppProxyApi/           # Proxy para WhatsApp Business API
-│   │   ├── Controllers/            # Webhook endpoints
-│   │   ├── Services/               # Integração com Meta API
-│   │   ├── Models/                 # DTOs e configurações
-│   │   └── Program.cs
-│   │
-│   ├── UserAccountApi/             # API de gerenciamento de usuários
-│   │   ├── Controllers/            # CRUD de usuários
-│   │   ├── Data/                   # DbContext e configurações EF
-│   │   ├── Models/                 # Entidades de domínio
-│   │   └── Program.cs
-│   │
-│   ├── PiiUpdateWorker/            # Worker de processamento de eventos
-│   │   ├── Services/               # Consumidor Service Bus
-│   │   └── Program.cs
-│   │
-│   ├── Shared/                     # Código compartilhado
-│   │   ├── Events/                 # Eventos de domínio
-│   │   ├── Interfaces/             # Contratos de serviços
-│   │   └── Models/                 # DTOs compartilhados
-│   │
-│   └── ServiceBusConfig.json       # Configuração do emulador
-│
-├── scripts/
-│   └── init-ollama.sh              # Script de inicialização do Ollama
-│
-├── docker-compose.yml              # Orquestração dos containers
-├── WhatsAppRegistration.sln        # Solução .NET
-└── .env                            # Variáveis de ambiente (não versionado)
+│   ├── AIChatService/          # Cérebro do sistema (Flow Engine + LLM)
+│   ├── BaileysWhatsAppService/ # Integração WhatsApp via Node.js (QR Code)
+│   ├── WhatsAppProxyApi/       # Proxy para Meta Cloud API (.NET)
+│   ├── UserAccountApi/         # Gestão de perfis de usuário
+│   ├── PiiUpdateWorker/        # Processamento assíncrono de eventos
+│   └── Shared/                 # Telemetria e contratos compartilhados
+├── grafana/                    # Configurações e Dashboards do Grafana
+├── prometheus.yml              # Configuração de coleta de métricas
+├── docker-compose.yml          # Orquestração principal
+└── docker-compose.monitoring.yml # Stack de observabilidade
 ```
 
-### Descrição dos Serviços
+---
 
-#### 🤖 AI Chat Service (Porta 8081)
-- Processa mensagens recebidas do WhatsApp
-- Gerencia fluxo de conversação (FlowEngine)
-- Integra com LLM para entender intenção do usuário
-- Valida dados coletados (telefone, email, endereço)
-- Publica eventos no Service Bus
-- Mantém estado da conversa no Redis
+## 🔧 Como Executar
 
-#### 📱 WhatsApp Proxy API (Porta 8082)
-- Recebe webhooks da Meta WhatsApp Business API
-- Envia mensagens de volta ao usuário via WhatsApp
-- Abstrai detalhes da API do WhatsApp
+### Pré-requisitos
+-   Docker Desktop configurado com **WSL2** (recomendado para performance de IA).
+-   Pelo menos 8GB de RAM disponível (para rodar o modelo Phi3).
 
-#### 👤 User Account API (Porta 8080)
-- CRUD de contas de usuário
-- Persiste dados no PostgreSQL
-- Gerencia informações pessoais (PII)
+### Passos para Inicialização
 
-#### ⚙️ PII Update Worker
-- Consome eventos de atualização de PII do Service Bus
-- Processa atualizações de forma assíncrona
-- Envia dados atualizados para User Account API
+1.  **Clone o repositório**:
+    ```bash
+    git clone <repo-url>
+    cd full_architecture
+    ```
 
-## 🔧 Pré-requisitos
+2.  **Inicie toda a stack**:
+    ```bash
+    # Inicia serviços core e monitoramento
+    docker-compose -f docker-compose.yml -f docker-compose.monitoring.yml up -d --build
+    ```
 
-Antes de executar o projeto, você precisa ter instalado:
+3.  **Acesse as interfaces**:
+    -   **Grafana**: [http://localhost:3001](http://localhost:3001) (Dashboards de CPU/RAM)
+    -   **Jaeger**: [http://localhost:16686](http://localhost:16686) (Traces das chamadas)
+    -   **Swagger (User API)**: [http://localhost:8080/swagger](http://localhost:8080/swagger)
+    -   **WhatsApp Status**: [http://localhost:3000/status](http://localhost:3000/status)
 
-- **Docker Desktop** (Windows/Mac) ou **Docker Engine** + **Docker Compose** (Linux)
-  - Versão mínima: Docker 20.10+
-  - Versão mínima Docker Compose: 2.0+
-- **Git** (para clonar o repositório)
-- **(Opcional)** **.NET 8 SDK** - apenas se quiser desenvolver localmente sem Docker
+4.  **Autenticação WhatsApp (Baileys)**:
+    -   Verifique os logs: `docker logs -f full_architecture-baileys-whatsapp-service-1`
+    -   Escaneie o QR Code exibido no terminal com seu app WhatsApp.
 
-### Requisitos da Meta WhatsApp Business API
+---
 
-Para usar o WhatsApp:
-1. Conta Meta for Developers
-2. App configurado no Meta Business
-3. WhatsApp Business API habilitada
-4. Token de acesso (Access Token)
-5. Phone Number ID
+## 🔍 Monitoramento e Diagnóstico
 
-## 🐳 Executando Localmente com Docker
+O sistema está configurado para fornecer visibilidade total:
 
-### 1. Clone o Repositório
+-   **Distributed Tracing**: Todas as chamadas entre serviços incluem um `Trace ID`. Se uma mensagem falha, você pode ver exatamente em qual microserviço e em qual etapa o erro ocorreu via Jaeger.
+-   **Métricas de Processo**: O Grafana exibe o consumo de CPU e Memória em tempo real para cada container, permitindo identificar gargalos no processamento do LLM ou vazamentos de memória.
+-   **Health Checks**: Cada serviço possui um endpoint `/health` monitorado.
 
-```bash
-git clone <url-do-repositorio>
-cd full_architecture
-```
-
-### 2. Configure as Variáveis de Ambiente
-
-Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
-
-```env
-# WhatsApp Configuration
-WHATSAPP_ACCESS_TOKEN=seu_token_de_acesso_meta
-WHATSAPP_PHONE_NUMBER_ID=seu_phone_number_id
-
-# Opcional - Registry Docker (se usar)
-DOCKER_REGISTRY=
-```
-
-> ⚠️ **Importante**: Substitua `seu_token_de_acesso_meta` e `seu_phone_number_id` pelos valores reais obtidos no Meta for Developers.
-
-### 3. Build das Imagens
-
-```bash
-docker-compose build
-```
-
-Este comando irá:
-- Compilar os 4 microserviços (.NET)
-- Criar imagens Docker customizadas
-- Baixar imagens base necessárias (PostgreSQL, Redis, etc.)
-
-**Tempo estimado**: 3-5 minutos na primeira execução
-
-### 4. Inicie os Containers
-
-```bash
-docker-compose up -d
-```
-
-Este comando irá:
-- Iniciar todos os containers em modo detached (background)
-- Criar a rede Docker `app-network`
-- Criar volumes persistentes para PostgreSQL e Ollama
-- Baixar o modelo Phi3 automaticamente no Ollama
-
-**Tempo estimado**: 2-3 minutos (+ tempo para download do modelo Phi3: ~2GB)
-
-### 5. Verifique o Status dos Containers
-
-```bash
-docker-compose ps
-```
-
-Todos os serviços devem mostrar status `Up`:
-
-```
-NAME                    STATUS              PORTS
-postgres                Up                  0.0.0.0:5432->5432/tcp
-redis                   Up                  0.0.0.0:6379->6379/tcp
-servicebus-emulator     Up                  0.0.0.0:5672->5672/tcp
-sql-edge                Up                  0.0.0.0:1433->1433/tcp
-ollama                  Up                  0.0.0.0:11434->11434/tcp
-user-account-api        Up                  0.0.0.0:8080->8080/tcp
-whatsapp-proxy-api      Up                  0.0.0.0:8082->8080/tcp
-ai-chat-service         Up                  0.0.0.0:8081->8080/tcp
-pii-update-worker       Up
-```
-
-### 6. Visualize os Logs
-
-Para acompanhar os logs de todos os serviços:
-
-```bash
-docker-compose logs -f
-```
-
-Para logs de um serviço específico:
-
-```bash
-docker-compose logs -f ai-chat-service
-```
-
-## 🧪 Testando a Aplicação
-
-### 1. Verifique as APIs
-
-#### User Account API (Swagger)
-```
-http://localhost:8080/swagger
-```
-
-#### AI Chat Service (Swagger)
-```
-http://localhost:8081/swagger
-```
-
-#### WhatsApp Proxy API (Swagger)
-```
-http://localhost:8082/swagger
-```
-
-### 2. Teste o Ollama (LLM)
-
-```bash
-curl http://localhost:11434/api/tags
-```
-
-Deve retornar a lista de modelos, incluindo `phi3`.
-
-### 3. Teste com WhatsApp (Produção)
-
-Para testar com WhatsApp real, você precisa:
-
-1. **Expor o webhook localmente** usando ngrok ou similar:
-   ```bash
-   ngrok http 8082
-   ```
-
-2. **Configurar o webhook no Meta for Developers**:
-   - URL: `https://seu-dominio-ngrok.ngrok.io/api/webhook`
-   - Verify Token: (conforme configurado no código)
-
-3. **Enviar mensagem** do seu WhatsApp para o número de teste
-
-## 🛠️ Comandos Úteis
-
-### Parar todos os containers
-```bash
-docker-compose down
-```
-
-### Parar e remover volumes (⚠️ apaga dados)
-```bash
-docker-compose down -v
-```
-
-### Rebuild de um serviço específico
-```bash
-docker-compose up -d --build ai-chat-service
-```
-
-### Acessar container
-```bash
-docker exec -it ai-chat-service bash
-```
-
-### Ver uso de recursos
-```bash
-docker stats
-```
-
-## 📊 Portas Utilizadas
-
-| Serviço                  | Porta Host | Porta Container |
-|--------------------------|------------|-----------------|
-| User Account API         | 8080       | 8080            |
-| AI Chat Service          | 8081       | 8080            |
-| WhatsApp Proxy API       | 8082       | 8080            |
-| PostgreSQL               | 5432       | 5432            |
-| Redis                    | 6379       | 6379            |
-| Service Bus Emulator     | 5672       | 5672            |
-| SQL Edge                 | 1433       | 1433            |
-| Ollama                   | 11434      | 11434           |
-
-## 🔍 Troubleshooting
-
-### Container não inicia
-
-```bash
-# Ver logs detalhados
-docker-compose logs [nome-do-servico]
-
-# Verificar recursos do Docker
-docker system df
-```
-
-### Erro de conexão com banco de dados
-
-- Aguarde alguns segundos após `docker-compose up` para o PostgreSQL inicializar completamente
-- Verifique se a porta 5432 não está em uso por outro processo
-
-### Modelo Phi3 não baixou
-
-```bash
-# Entre no container do Ollama
-docker exec -it ollama bash
-
-# Execute manualmente
-ollama pull phi3
-```
-
-### Service Bus não conecta
-
-- Certifique-se que o SQL Edge está rodando corretamente
-- Verifique os logs: `docker-compose logs servicebus-emulator`
+---
 
 ## 🔐 Segurança
 
-> ⚠️ **Este projeto é para desenvolvimento local**
+-   Os dados de PII são isolados na `UserAccountApi`.
+-   Nenhuma chave de API ou token deve ser versionado; utilize o arquivo `.env`.
+-   O processamento de IA é **Local (Ollama)**, garantindo que os dados do usuário não saiam da sua infraestrutura para APIs de terceiros como OpenAI.
 
-Para produção, considere:
-- Usar secrets management (Azure Key Vault, HashiCorp Vault)
-- Configurar HTTPS/TLS
-- Implementar autenticação e autorização robustas
-- Usar variáveis de ambiente seguras
-- Não versionar `.env` no Git
-- Configurar rate limiting
-- Implementar logging e monitoring adequados
+---
 
 ## 📝 Licença
-
-[Especifique a licença do projeto]
-
-## 👥 Contribuindo
-
-[Instruções para contribuição, se aplicável]
-
-## 📞 Suporte
-
-[Informações de contato ou canal de suporte]
+[MIT] - Veja o arquivo LICENSE para detalhes.
