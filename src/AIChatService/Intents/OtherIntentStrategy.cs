@@ -25,6 +25,10 @@ public class OtherIntentStrategy : IIntentStrategy
         {
             if (text.Contains("iniciar", StringComparison.OrdinalIgnoreCase) || 
                 text.Contains("começar", StringComparison.OrdinalIgnoreCase) ||
+                text.Contains("atualizar", StringComparison.OrdinalIgnoreCase) ||
+                text.Contains("mudar", StringComparison.OrdinalIgnoreCase) ||
+                text.Contains("alterar", StringComparison.OrdinalIgnoreCase) ||
+                text.Contains("cadastro", StringComparison.OrdinalIgnoreCase) ||
                 text.Contains("start", StringComparison.OrdinalIgnoreCase))
             {
                 state.Type = FlowType.Update;

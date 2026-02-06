@@ -1,24 +1,24 @@
 using Azure.Messaging.ServiceBus;
 using PiiUpdateWorker;
+using OpenTelemetry.Metrics;
 
-var builder = Host.CreateApplicationBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton(sp => 
     new ServiceBusClient(builder.Configuration["ServiceBus:ConnectionString"]));
 
 builder.Services.AddHttpClient();
-
 builder.Services.AddHostedService<Worker>();
 
-// Add Prometheus scraping endpoint for the worker
+// Add Prometheus metrics
 builder.Services.AddOpenTelemetry()
     .WithMetrics(metrics => metrics
         .AddRuntimeInstrumentation()
         .AddPrometheusExporter());
 
-var host = builder.Build();
+var app = builder.Build();
 
-// Configure the worker to expose metrics on port 8080
-host.UseOpenTelemetryPrometheusScrapingEndpoint();
+// Expose /metrics endpoint
+app.UseOpenTelemetryPrometheusScrapingEndpoint();
 
-host.Run();
+app.Run();

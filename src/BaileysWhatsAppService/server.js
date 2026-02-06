@@ -58,7 +58,7 @@ function makeInMemoryStore({ logger }) {
 }
 
 const app = express();
-const promBundle = require("express-prometheus-bundle");
+const promBundle = require("express-prom-bundle");
 
 const metricsMiddleware = promBundle({
     includeMethod: true,
@@ -221,28 +221,41 @@ async function connectToWhatsApp() {
 
         // Message handler
         sock.ev.on('messages.upsert', async ({ messages, type }) => {
-            // DEBUG: Log every incoming event
-            logger.info({ msg: 'DEBUG: messages.upsert received', type, count: messages.length, raw: messages });
+            // Log incoming message events
+            logger.info({ msg: 'Incoming WhatsApp event', type, count: messages.length });
 
-            if (type === 'notify') {
+            if (type === 'notify' || type === 'append') {
                 for (const msg of messages) {
                     const jid = msg.key.remoteJid;
                     const isGroup = isJidGroup(jid);
                     const isStatus = jid === 'status@broadcast' || jid.endsWith('@broadcast');
                     const isNewsletter = jid.endsWith('@newsletter');
 
-                    if (!msg.key.fromMe && msg.message && !isGroup && !isStatus && !isNewsletter) {
+                    // Skip statuses, groups, and newsletters
+                    if (isGroup || isStatus || isNewsletter) continue;
+
+                    if (!msg.key.fromMe && msg.message) {
+                        // Extract text content from various message types
+                        const textContent = msg.message.conversation ||
+                            msg.message.extendedTextMessage?.text ||
+                            msg.message.imageMessage?.caption ||
+                            msg.message.videoMessage?.caption ||
+                            '';
+
+                        if (!textContent) {
+                            logger.info({ msg: 'Message received but no text content found', jid, type: Object.keys(msg.message)[0] });
+                            continue;
+                        }
+
                         const messageData = {
                             id: msg.key.id,
-                            from: msg.key.remoteJid,
+                            from: jid,
                             timestamp: msg.messageTimestamp,
-                            message: msg.message?.conversation ||
-                                msg.message?.extendedTextMessage?.text ||
-                                '',
+                            message: textContent,
                             type: Object.keys(msg.message)[0]
                         };
 
-                        logger.info(`Received message from ${messageData.from}: ${messageData.message}`);
+                        logger.info(`Processing message from ${messageData.from}: ${messageData.message}`);
                         messageQueue.push(messageData);
 
                         // Forward to AIChatService webhook

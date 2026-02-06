@@ -6,9 +6,9 @@ namespace AIChatService.Flow;
 
 public abstract class FlowStateHandlerBase : IFlowStateHandler
 {
-    private readonly IWhatsAppService _whatsAppService;
-    private readonly ConversationService _conversationService;
-    private readonly ILogger _logger;
+    protected readonly IWhatsAppService _whatsAppService;
+    protected readonly ConversationService _conversationService;
+    protected readonly ILogger _logger;
 
     protected FlowStateHandlerBase(
         IWhatsAppService whatsAppService,

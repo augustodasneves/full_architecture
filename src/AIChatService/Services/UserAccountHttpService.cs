@@ -20,7 +20,7 @@ public class UserAccountHttpService : IUserAccountService
         try
         {
             // 1. Try search by full WhatsApp JID first (more reliable)
-            var waUrl = $"/api/User/wa/{phoneNumber}";
+            var waUrl = $"/api/User/wa/{Uri.EscapeDataString(phoneNumber)}";
             _logger.LogInformation("Checking user existence by WA ID. Calling: {Url}", waUrl);
             var waResponse = await _httpClient.GetAsync(waUrl);
             
@@ -32,7 +32,7 @@ public class UserAccountHttpService : IUserAccountService
 
             // 2. Fallback to cleaned phone number search
             var cleanNumber = ExtractNumber(phoneNumber);
-            var phoneUrl = $"/api/User/me/{cleanNumber}";
+            var phoneUrl = $"/api/User/me/{Uri.EscapeDataString(cleanNumber)}";
             
             _logger.LogInformation("User not found by JID. Trying cleaned phone number: {Clean}. Calling: {Url}", 
                 cleanNumber, phoneUrl);
@@ -54,7 +54,7 @@ public class UserAccountHttpService : IUserAccountService
         try
         {
             // 1. Try search by full WhatsApp JID first
-            var waUrl = $"/api/User/wa/{phoneNumber}";
+            var waUrl = $"/api/User/wa/{Uri.EscapeDataString(phoneNumber)}";
             _logger.LogInformation("Fetching profile by WA ID. Calling: {Url}", waUrl);
             var waResponse = await _httpClient.GetAsync(waUrl);
             
@@ -68,7 +68,7 @@ public class UserAccountHttpService : IUserAccountService
 
             // 2. Fallback to cleaned phone number search
             var cleanNumber = ExtractNumber(phoneNumber);
-            var phoneUrl = $"/api/User/me/{cleanNumber}";
+            var phoneUrl = $"/api/User/me/{Uri.EscapeDataString(cleanNumber)}";
             
             _logger.LogInformation("Profile not found by JID. Trying cleaned phone number: {Clean}. Calling: {Url}", 
                 cleanNumber, phoneUrl);
@@ -106,7 +106,7 @@ public class UserAccountHttpService : IUserAccountService
     {
         try
         {
-            var waUrl = $"/api/User/wa/{whatsappId}";
+            var waUrl = $"/api/User/wa/{Uri.EscapeDataString(whatsappId)}";
             _logger.LogInformation("Explicitly fetching profile by WA ID. Calling: {Url}", waUrl);
             var waResponse = await _httpClient.GetAsync(waUrl);
             

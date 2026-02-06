@@ -1,6 +1,8 @@
 using Newtonsoft.Json;
 using Shared.Interfaces;
 using System.Text;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
 namespace AIChatService.Services;
 
@@ -8,11 +10,14 @@ public class LLMService : ILLMService
 {
     private readonly HttpClient _httpClient;
     private readonly string _baseUrl;
+    private readonly ILogger<LLMService> _logger;
 
-    public LLMService(HttpClient httpClient, IConfiguration configuration)
+    public LLMService(HttpClient httpClient, IConfiguration configuration, ILogger<LLMService> logger)
     {
         _httpClient = httpClient;
+        _httpClient.Timeout = TimeSpan.FromSeconds(10); // 10s timeout for LLM
         _baseUrl = configuration["LLM:BaseUrl"] ?? "http://localhost:11434";
+        _logger = logger;
     }
 
     public async Task<string> IdentifyIntentAsync(string userMessage)
@@ -53,8 +58,9 @@ Reply with only 'UPDATE_REGISTRATION' or 'OTHER'.";
             dynamic result = JsonConvert.DeserializeObject(responseString)!;
             return result.response.ToString().Trim();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error calling Ollama API at {BaseUrl}", _baseUrl);
             // Fallback for demo or if LLM is down
             return "OTHER"; 
         }

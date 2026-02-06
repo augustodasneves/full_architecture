@@ -3,6 +3,7 @@ using Shared.Interfaces;
 using AIChatService.Services;
 using AIChatService.Intents;
 using Shared.DTOs;
+using Microsoft.Extensions.Logging;
 
 namespace AIChatService.Flow;
 
@@ -33,8 +34,12 @@ public class IdleStateHandler : FlowStateHandlerBase
         var userProfile = await _userAccountService.GetUserProfileByWhatsAppIdAsync(state.PhoneNumber);
         var intentName = await _llmService.IdentifyIntentAsync(text);
         
-        var strategy = _intentStrategies.FirstOrDefault(s => s.IntentName.Equals(intentName, StringComparison.OrdinalIgnoreCase)) 
+        _logger.LogInformation("Intent identified for {Phone}: {Intent}", state.PhoneNumber, intentName);
+
+        var strategy = _intentStrategies.FirstOrDefault(s => intentName.Contains(s.IntentName, StringComparison.OrdinalIgnoreCase)) 
                        ?? _intentStrategies.First(s => s.IntentName == "OTHER");
+
+        _logger.LogInformation("Selected strategy: {Strategy}", strategy.GetType().Name);
 
         await strategy.ExecuteAsync(state, userProfile, text);
     }
