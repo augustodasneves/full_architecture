@@ -16,3 +16,13 @@ scrape_configs:
     static_configs:
       - targets: ['user-account-api:8080']
     metrics_path: '/metrics'
+
+  - job_name: 'baileys-whatsapp-service'
+    static_configs:
+      - targets: ['baileys-whatsapp-service:3000']
+    metrics_path: '/metrics'
+
+  - job_name: 'pii-update-worker'
+    static_configs:
+      - targets: ['pii-update-worker:8080']
+    metrics_path: '/metrics'

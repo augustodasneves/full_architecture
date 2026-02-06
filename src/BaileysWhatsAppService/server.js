@@ -58,6 +58,20 @@ function makeInMemoryStore({ logger }) {
 }
 
 const app = express();
+const promBundle = require("express-prometheus-bundle");
+
+const metricsMiddleware = promBundle({
+    includeMethod: true,
+    includePath: true,
+    includeStatusCode: true,
+    includeUp: true,
+    customLabels: { project_name: 'whatsapp_architecture', service_name: 'baileys-whatsapp-service' },
+    promClient: {
+        collectDefaultMetrics: {}
+    }
+});
+
+app.use(metricsMiddleware);
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
