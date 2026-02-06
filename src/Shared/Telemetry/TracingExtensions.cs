@@ -26,6 +26,7 @@ public static class TracingExtensions
                 .AddAspNetCoreInstrumentation()
                 .AddHttpClientInstrumentation()
                 .AddRuntimeInstrumentation()
+                .AddProcessInstrumentation()
                 .AddPrometheusExporter());
 
         return services;

@@ -4045,268 +4045,6 @@
       "key": {
         "remoteJid": "555196669136@s.whatsapp.net",
         "fromMe": false,
-        "id": "3A4D2734484770AEDE1D",
-        "senderLid": "276110898147446@lid"
-      },
-      "messageTimestamp": 1769218683,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "messageStubType": 2,
-      "messageStubParameters": [
-        "Message absent from node"
-      ]
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": true,
-        "id": "3EB0A1917C2602DDC9D7E2"
-      },
-      "message": {
-        "extendedTextMessage": {
-          "text": "Posso ajudá-lo a atualizar seus dados. É só pedir!"
-        }
-      },
-      "messageTimestamp": "1769218693",
-      "status": "PENDING"
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": false,
-        "id": "4A26DA9D4EF81A877102",
-        "senderLid": "276110898147446@lid"
-      },
-      "messageTimestamp": 1769478956,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "message": {
-        "extendedTextMessage": {
-          "text": "https://www.youtube.com/live/tu3-KRR-Ico?si=pE50OOIptbb4te8y",
-          "matchedText": "https://www.youtube.com/live/tu3-KRR-Ico?si=pE50OOIptbb4te8y",
-          "description": "O PRETINHO BÁSICO DAS 13H ESTÁ NO AR!     Atitus Educação. Ensino inovador que conecta você ao mercado. Siga @atitus_educacao e acelere a sua carreira.Banris...",
-          "title": "PRETINHO BÁSICO 13H AO VIVO | ATL TV | 26/01",
-          "font": "SYSTEM",
-          "previewType": "VIDEO",
-          "jpegThumbnail": "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",
-          "thumbnailDirectPath": "/v/t62.36144-24/582100519_917482530794495_4681541437291652709_n.enc?ccb=11-4&oh=01_Q5Aa3gE6VePm8wTc_MOo1Bc0IoPq1a7If9tnIlGdhuqLwCasuA&oe=699F79FC&_nc_sid=5e03e0",
-          "thumbnailSha256": "9Cv3TKTMR1z8epzrxz0F/PfiyPPa2jdNkViHIP2fFG8=",
-          "thumbnailEncSha256": "HtuC7KmqE6Okaq+6sibKsAObWqVlX6HvA5eQ01ibxZU=",
-          "mediaKey": "w1Zo0zaTSqRUJs2OsYD7PAuUIlOqFmhNBl3GuXuLDhY=",
-          "mediaKeyTimestamp": "1769478953",
-          "thumbnailHeight": 576,
-          "thumbnailWidth": 1024,
-          "inviteLinkGroupTypeV2": "DEFAULT",
-          "videoHeight": 720,
-          "videoWidth": 1280,
-          "faviconMMSMetadata": {
-            "thumbnailDirectPath": "/v/t62.36144-24/569319661_871771598916469_3754846867277013823_n.enc?ccb=11-4&oh=01_Q5Aa3gErCuP0JC0atPJ2h9EPD8IvnE1WHBfmcaeZJHkHSv6yZg&oe=699F7422&_nc_sid=5e03e0",
-            "thumbnailSha256": "Lr5QX2POGlgD1NNpRkVggb/CbFAf5HkccK+zaq540HQ=",
-            "thumbnailEncSha256": "dEKYOq/LYCii58XFiqy8bT6MSRSwYMl/o4anO/vtfoc=",
-            "mediaKey": "w1Zo0zaTSqRUJs2OsYD7PAuUIlOqFmhNBl3GuXuLDhY="
-          },
-          "linkPreviewMetadata": {
-            "fbExperimentId": 0
-          }
-        },
-        "messageContextInfo": {
-          "deviceListMetadata": {
-            "senderKeyHash": "T694MxMz3Oz4TQ==",
-            "senderTimestamp": "1769271705",
-            "recipientKeyHash": "7QsBaUoXbKlXdw==",
-            "recipientTimestamp": "1769478464",
-            "recipientKeyIndexes": [
-              1
-            ]
-          },
-          "deviceListMetadataVersion": 2,
-          "messageSecret": "f8bb9MupbYbAJAPXDllA6Pbjk8SBH1o3osnAZQclphc="
-        }
-      }
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": false,
-        "id": "3AA761B3E947DBB6A9C7",
-        "senderLid": "276110898147446@lid"
-      },
-      "messageTimestamp": 1769478967,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "message": {
-        "conversation": "Vai até 41 min",
-        "messageContextInfo": {
-          "deviceListMetadata": {
-            "senderKeyHash": "T694MxMz3Oz4TQ==",
-            "senderTimestamp": "1769271705",
-            "recipientKeyHash": "7QsBaUoXbKlXdw==",
-            "recipientTimestamp": "1769478464",
-            "recipientKeyIndexes": [
-              1
-            ]
-          },
-          "deviceListMetadataVersion": 2,
-          "messageSecret": "cWVV5wqaO0W8Rtnerhrk4Uix0hbf0FIlVVfNVxO5JLA="
-        }
-      }
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": false,
-        "id": "3AEDEF6CD979F2122628",
-        "senderLid": "276110898147446@lid"
-      },
-      "messageTimestamp": 1770343433,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "message": {
-        "conversation": "Oi",
-        "messageContextInfo": {
-          "deviceListMetadata": {
-            "senderKeyHash": "T694MxMz3Oz4TQ==",
-            "senderTimestamp": "1770323601",
-            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
-            "recipientTimestamp": "1770249470"
-          },
-          "deviceListMetadataVersion": 2,
-          "messageSecret": "PONxOXP3qSjDPP0wjGHTnCW9U2pu4VoJzqcZZXjJOb8="
-        }
-      }
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": true,
-        "id": "3EB004035626B1D1A6CC91"
-      },
-      "message": {
-        "extendedTextMessage": {
-          "text": "Olá! 👋\n\nNotei que você ainda não tem cadastro conosco. Vamos realizar seu cadastro agora? É rápido!\n\nPara começar, por favor, digite seu nome completo."
-        }
-      },
-      "messageTimestamp": "1770343444",
-      "status": "SERVER_ACK"
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": false,
-        "id": "3A3418239C59A195A00B",
-        "senderLid": "276110898147446@lid"
-      },
-      "messageTimestamp": 1770343533,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "message": {
-        "conversation": "Bruna adam Borges",
-        "messageContextInfo": {
-          "deviceListMetadata": {
-            "senderKeyHash": "T694MxMz3Oz4TQ==",
-            "senderTimestamp": "1770323601",
-            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
-            "recipientTimestamp": "1770249470"
-          },
-          "deviceListMetadataVersion": 2,
-          "messageSecret": "eqMSFUgzpXD18tiFDIt3zJ+iF5K01s0frm+pICIvPYI="
-        }
-      }
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": true,
-        "id": "3EB0785431055B80A223C6"
-      },
-      "message": {
-        "extendedTextMessage": {
-          "text": "✅ Nome salvo com sucesso!\n\nAgora, por favor, digite seu número de telefone (com DDD)."
-        }
-      },
-      "messageTimestamp": "1770343532",
-      "status": "SERVER_ACK"
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": false,
-        "id": "3AA52C4E7FD8F8DF6488",
-        "senderLid": "276110898147446@lid"
-      },
-      "messageTimestamp": 1770343539,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "message": {
-        "conversation": "51999801001",
-        "messageContextInfo": {
-          "deviceListMetadata": {
-            "senderKeyHash": "T694MxMz3Oz4TQ==",
-            "senderTimestamp": "1770323601",
-            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
-            "recipientTimestamp": "1770249470"
-          },
-          "deviceListMetadataVersion": 2,
-          "messageSecret": "KgP9alwROe6PP/HzNBIcskC/ZrGcEbd0gLP17oOq5K8="
-        }
-      }
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": true,
-        "id": "3EB084C7B82D20B85715D0"
-      },
-      "message": {
-        "extendedTextMessage": {
-          "text": "✅ Telefone salvo com sucesso!\n\nPor favor, digite seu e-mail."
-        }
-      },
-      "messageTimestamp": "1770343538",
-      "status": "SERVER_ACK"
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": false,
-        "id": "3A994086E6E2D47C85EB",
-        "senderLid": "276110898147446@lid"
-      },
-      "messageTimestamp": 1770343569,
-      "pushName": "Bruna Borges",
-      "broadcast": false,
-      "message": {
-        "conversation": "Brunaadamborges@hotmail.com",
-        "messageContextInfo": {
-          "deviceListMetadata": {
-            "senderKeyHash": "T694MxMz3Oz4TQ==",
-            "senderTimestamp": "1770323601",
-            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
-            "recipientTimestamp": "1770249470"
-          },
-          "deviceListMetadataVersion": 2,
-          "messageSecret": "MqjQzszEekcFfSAROJTBxxolR9Sc5LCU6GiRed6hId8="
-        }
-      }
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": true,
-        "id": "3EB08EAE468653EC16F3D1"
-      },
-      "message": {
-        "extendedTextMessage": {
-          "text": "✅ E-mail salvo com sucesso!\n\nPor favor, digite seu endereço completo."
-        }
-      },
-      "messageTimestamp": "1770343568",
-      "status": "SERVER_ACK"
-    },
-    {
-      "key": {
-        "remoteJid": "555196669136@s.whatsapp.net",
-        "fromMe": false,
         "id": "3A24BB8EC52096B30121",
         "senderLid": "276110898147446@lid"
       },
@@ -4834,6 +4572,424 @@
       },
       "messageTimestamp": "1770344191",
       "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3A5732E2A96F62606121",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770344798,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Oi",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "8nrBPzx4xSY/IlNRoLD/tLZXcoxWMw43OZEuzFEBC/o="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB04F47DD6D9DA516A6FD"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá, Testes Augusto! 👋\n\nSou seu assistente virtual. Como posso ajudar hoje? Se precisar atualizar seu endereço, telefone ou e-mail, é só me avisar!"
+        }
+      },
+      "messageTimestamp": "1770344809",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3A35E6F41E04640E905C",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770344829,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Obrigado",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "lfQV9qLWbDmQO0s53qCI9wEbZi2PRNFe4Iq6rvhzFj8="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB0AC9D5ADF111EF43C12"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá, Testes Augusto! 👋\n\nSou seu assistente virtual. Como posso ajudar hoje? Se precisar atualizar seu endereço, telefone ou e-mail, é só me avisar!"
+        }
+      },
+      "messageTimestamp": "1770344839",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3AF2C1C8A02C3A17FB48",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345200,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Quero atualizar",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "+nOKknv4pTriQsOLelrmofM7qmfF+J5MhQQSIVfqnxg="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB06BD8EA30B24CC4B562"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "Olá, Testes Augusto! 👋\n\nQue bom falar com você novamente. Para atualizar seus dados, primeiro vamos confirmar seu nome completo."
+        }
+      },
+      "messageTimestamp": "1770345211",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3A9A1D16EF0B3BFB588E",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345220,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Auge",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "ztdz6UZBWJHXro4N8MEZla4O3uYU5d2dek814XolU74="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB03CDB76AB7BBD76099D"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Nome atualizado com sucesso!\n\nAgora, por favor, digite seu número de telefone (com DDD)."
+        }
+      },
+      "messageTimestamp": "1770345219",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3AE4C5F24CD180A8A6A9",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345228,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "51667788998877",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "DdqDIV1qzjQWGu2kF4T2UA7tCMQ0TyuozHyoM28a068="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB08E2EFBA2D8B1955931"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 2"
+        }
+      },
+      "messageTimestamp": "1770345227",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3A40371346AB9A60A2B2",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345237,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "51515151515",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "Qch/Zxo9BBCQ3jHvOSDSI1sw31yb0uIg/HKMPT5Clkc="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB084C3956F8B1E19C689"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de telefone inválido. Por favor, use um formato válido como:\n• (11) 99999-9999\n• 11-99999-9999\n• 11999999999\n• +5511999999999\n\nTentativas restantes: 1"
+        }
+      },
+      "messageTimestamp": "1770345237",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3A6F57127478550B44EB",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345260,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "5151516161",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "k55w5arcXhFMZ4ZEGuXN6XjWnsQxSrX2qazMnk0G0Mo="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB013D29222BAF9D47347"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Novo telefone salvo com sucesso!\n\nPor favor, digite seu novo e-mail."
+        }
+      },
+      "messageTimestamp": "1770345259",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3A1BF4761E2078F0A5C0",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345268,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Rua x1234",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "7I+EeC190d2arxhoxLu7g6J3Kt5iLOubxsFfxpVI1MY="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB05AF108EC75590C7940"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "❌ Formato de e-mail inválido. Por favor, use um formato válido como:\n• usuario@exemplo.com\n• nome.sobrenome@empresa.com.br\n\nTentativas restantes: 2"
+        }
+      },
+      "messageTimestamp": "1770345267",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3AF4FBEA3078751BE928",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345290,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Augustodasneves@hotmail.com",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "9+P6U0RDPRFXwOiNfUewZwvADGigelqN85Rmx5lYfIw="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB042677C62604C885DE2"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Novo e-mail salvo com sucesso!\n\nPor favor, digite seu novo endereço completo."
+        }
+      },
+      "messageTimestamp": "1770345289",
+      "status": "SERVER_ACK"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3A75A08AC093CB6B56C2",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345298,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Testes testes",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "rksd2o8IJdHy54/1fMCMUhfyrDZRnl9ziaTqzVZq3Qk="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB048C1966AFB988B5E07"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Endereço salvo com sucesso!\n\nPor favor, confirme seus novos dados:\n\n👤 Nome: Auge\n📱 Telefone: 5151516161\n📧 Email: augustodasneves@hotmail.com\n🏠 Endereço: Testes testes\n\nEstá correto? (sim/não)"
+        }
+      },
+      "messageTimestamp": "1770345297",
+      "status": "PENDING"
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": false,
+        "id": "3AB1D92753323BA1EAA1",
+        "senderLid": "276110898147446@lid"
+      },
+      "messageTimestamp": 1770345302,
+      "pushName": "Bruna Borges",
+      "broadcast": false,
+      "message": {
+        "conversation": "Sim",
+        "messageContextInfo": {
+          "deviceListMetadata": {
+            "senderKeyHash": "T694MxMz3Oz4TQ==",
+            "senderTimestamp": "1770323601",
+            "recipientKeyHash": "cVdmKW/6+Dp4ug==",
+            "recipientTimestamp": "1770249470"
+          },
+          "deviceListMetadataVersion": 2,
+          "messageSecret": "t/mlKxpDpymAEHRVxGXrwvjmx6p14A/BVqrI2VhswKg="
+        }
+      }
+    },
+    {
+      "key": {
+        "remoteJid": "555196669136@s.whatsapp.net",
+        "fromMe": true,
+        "id": "3EB029196034F1C555161E"
+      },
+      "message": {
+        "extendedTextMessage": {
+          "text": "✅ Solicitação de atualização enviada com sucesso! Seu cadastro será atualizado em breve."
+        }
+      },
+      "messageTimestamp": "1770345302",
+      "status": "SERVER_ACK"
     }
   ],
   "status@broadcast": [

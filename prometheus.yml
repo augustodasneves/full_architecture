@@ -7,9 +7,9 @@ scrape_configs:
       - targets: ['whatsapp-proxy-api:8080']
     metrics_path: '/metrics'
 
-  - job_name: 'aichat-service'
+  - job_name: 'ai-chat-service'
     static_configs:
-      - targets: ['aichat-service:8080']
+      - targets: ['ai-chat-service:8080']
     metrics_path: '/metrics'
 
   - job_name: 'user-account-api'
